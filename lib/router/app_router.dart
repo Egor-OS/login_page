@@ -16,10 +16,10 @@ class RoutesBonusesApp {
 
   late final _router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: '/${AppRouteNames.home}',
+    // initialLocation: '/${AppRouteNames.home}',
     // while working on catalog screen, uncomment the line above and comment
     // the line below to set the app initial location.
-    // initialLocation: '/${AppRouteNames.catalog}',
+    initialLocation: '/${AppRouteNames.catalog}',
     routes: [
       AppRoute.root(path: AppRouteNames.login, widget: const LogInScreen()),
       StatefulShellRoute(
@@ -98,20 +98,20 @@ class RoutesBonusesApp {
             navigationShell,
       ),
     ],
-    // commented until catalog screen is in progress
-    redirect: (context, state) {
-      if (!authController.isLoggedIn.value) {
-        return (state.matchedLocation == '/${AppRouteNames.login}')
-            ? null
-            : '/${AppRouteNames.login}';
-      }
-      return (state.matchedLocation == '/${AppRouteNames.login}')
-          ? Future.delayed(const Duration(seconds: 3), () {
-              return '/${AppRouteNames.home}';
-            })
-          : null;
-    },
-    refreshListenable: authController,
+    // // commented until catalog screen is in progress
+    // redirect: (context, state) {
+    //   if (!authController.isLoggedIn.value) {
+    //     return (state.matchedLocation == '/${AppRouteNames.login}')
+    //         ? null
+    //         : '/${AppRouteNames.login}';
+    //   }
+    //   return (state.matchedLocation == '/${AppRouteNames.login}')
+    //       ? Future.delayed(const Duration(seconds: 3), () {
+    //           return '/${AppRouteNames.home}';
+    //         })
+    //       : null;
+    // },
+    // refreshListenable: authController,
   );
 }
 
