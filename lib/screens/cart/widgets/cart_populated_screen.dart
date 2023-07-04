@@ -25,12 +25,12 @@ class CartPopulatedScreen extends StatelessWidget {
           TextButton(
             onPressed: _onDeleteAllPressed,
             child: Text(
-              tr(AppStrings.deleteAll),
+              tr(AppStrings.button_delAll),
             ),
           ),
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation: CustomFloatingActionButtonLocation(context),
       floatingActionButton: CartFloatingCheckoutButton(
         onPressed: () {},
       ),
@@ -89,7 +89,7 @@ class CartPopulatedScreen extends StatelessWidget {
             onPressed: () => _removeProductFromCart(cartProduct),
             type: ButtonType.secondary,
             child: Text(
-              tr(AppStrings.deleteFromCart),
+              tr(AppStrings.button_delFromCart),
             ),
           ),
         ),
@@ -122,11 +122,27 @@ class CartFloatingCheckoutButton extends StatelessWidget {
             child: BrandButton(
               onPressed: onPressed,
               size: ButtonSize.large,
-              child: Text('Checkout'),
+              child: Text(tr(AppStrings.button_checkout)),
             ),
           ),
         ],
       ),
     );
+  }
+}
+
+class CustomFloatingActionButtonLocation extends FloatingActionButtonLocation {
+  CustomFloatingActionButtonLocation(this.context);
+
+  BuildContext context;
+
+  @override
+  Offset getOffset(ScaffoldPrelayoutGeometry scaffoldGeometry) {
+    final screenSize = MediaQuery.of(context).size;
+    final navigationBarHeight = MediaQuery.of(context).padding.bottom;
+    final fabHeight = scaffoldGeometry.floatingActionButtonSize.height;
+    final y = screenSize.height - navigationBarHeight - fabHeight - padding28;
+
+    return Offset(0, y);
   }
 }

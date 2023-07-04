@@ -1,4 +1,4 @@
-import 'package:collection/collection.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:training_and_testing/constants/constants.dart';
@@ -29,17 +29,10 @@ class _MainScaffoldState extends State<MainScaffold> {
     final navigationShell = widget.navigationShell;
 
     return Scaffold(
-      // TODO: pass as a parameter
-      extendBody: false,
-      body: Stack(
-        fit: StackFit.expand,
-        children: children.mapIndexed((int index, Widget view) {
-          if (index == navigationShell.currentIndex) {
-            return Offstage(offstage: false, child: view);
-          } else {
-            return Offstage(child: view);
-          }
-        }).toList(),
+      extendBody: true,
+      body: IndexedStack(
+        index: navigationShell.currentIndex,
+        children: children,
       ),
       bottomNavigationBar: AppNavigationBar(
         selectedColor: appTheme.colorScheme.blue50,
@@ -56,39 +49,30 @@ class _MainScaffoldState extends State<MainScaffold> {
           AppNavigationBarItem(
             icon: AppIcons.nbarUnselectMainIcon,
             selectedIcon: AppIcons.nbarSelectMainIcon,
-            title: 'Main',
+            title: tr(AppStrings.navBar_main),
           ),
           AppNavigationBarItem(
             showBadge: true,
             icon: AppIcons.nbarUnselectCatalogIcon,
             selectedIcon: AppIcons.nbarSelectCatalogIcon,
-            title: 'Catalog',
+            title: tr(AppStrings.navBar_catalog),
           ),
           AppNavigationBarItem(
             badgeCount: 11,
             showBadge: true,
             icon: AppIcons.nbarUnselectBasketIcon,
             selectedIcon: AppIcons.nbarSelectBasketIcon,
-            title: 'Basket',
+            title: tr(AppStrings.navBar_basket),
           ),
           AppNavigationBarItem(
             icon: AppIcons.nbarUnselectProfileIcon,
             selectedIcon: AppIcons.nbarSelectProfileIcon,
-            title: 'Profile',
+            title: tr(AppStrings.navBar_profile),
           ),
         ],
         currentIndex: navigationShell.currentIndex,
         onTap: (index) => widget.navigationShell.goBranch(index),
       ),
     );
-  }
-
-  // TODO
-  @override
-  void didUpdateWidget(covariant MainScaffold oldWidget) {
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => ScaffoldMessenger.of(context).removeCurrentSnackBar(),
-    );
-    super.didUpdateWidget(oldWidget);
   }
 }

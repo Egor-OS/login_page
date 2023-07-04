@@ -19,3 +19,10 @@ abstract class NotificationsScreenSized{
   // [QuickFilterTabs] height
   static const double quickFilterTabsHeight = 36;
 }
+
+abstract class GeneralAppSized{
+  // [CustomSwitch] sized
+  static const double switchHeight = 24;
+  static const double switchWidth = 42;
+
+}

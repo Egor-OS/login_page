@@ -1,14 +1,17 @@
 export 'achievement_item_model.dart';
 export 'achievements_model.dart';
+export 'address_model.dart';
 export 'balance_model.dart';
 export 'cart_product_model.dart';
 export 'faq_model.dart';
 export 'google_user_model.dart';
 export 'notification_categories_model.dart';
 export 'notification_item_model.dart';
+export 'notification_settings_model.dart';
 export 'notifications_model.dart';
 export 'operation_item_model.dart';
 export 'operations_model.dart';
 export 'order_item_model.dart';
 export 'orders_model.dart';
+export 'profile_info_model.dart';
 export 'shipping_detail_model.dart';

@@ -12,7 +12,7 @@ Future<T?> showCustomModalBottomSheet<T>({
   Widget? trailing,
   bool isScrollControlled = false,
 }) async {
-  final backgroundColor = Theme.of(context).colorScheme.grey90;
+  final backgroundColor = Theme.of(context).colorScheme.grey70;
 
   return showModalBottomSheet(
     context: context,

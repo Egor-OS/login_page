@@ -63,8 +63,9 @@ class GetRequests extends GetRequestHandler implements BonusesApiInterface {
   }
 
   @override
-  Future<NotificationCategoryListModel> getNotificationCategoryList(
-      {String? locale}) async {
+  Future<NotificationCategoryListModel> getNotificationCategoryList({
+    String? locale,
+  }) async {
     return performRequest(
       BonusesApiEndpoints.notificationsCategory,
       NotificationCategoryListModel.fromJson,
@@ -76,6 +77,24 @@ class GetRequests extends GetRequestHandler implements BonusesApiInterface {
     return performRequest(
       BonusesApiEndpoints.faq,
       FaqModel.fromJson,
+    );
+  }
+
+  Future<ProfileInfoModel> getProfileInfo({required String userId}) async {
+    return performRequest(
+      BonusesApiEndpoints.profile,
+      ProfileInfoModel.fromJson,
+      userId: userId,
+    );
+  }
+
+  Future<ListNotificationSettingsModel> getNotificationSettings({
+    required String userId,
+  }) async {
+    return performRequest(
+      BonusesApiEndpoints.noticeSettings,
+      ListNotificationSettingsModel.fromJson,
+      userId: userId,
     );
   }
 }

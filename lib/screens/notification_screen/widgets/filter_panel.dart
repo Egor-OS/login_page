@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:training_and_testing/constants/constants.dart';
@@ -28,8 +29,10 @@ class FilterPanelWidget extends StatelessWidget {
                 pageController.jumpToPage(index);
               },
               isSelected: category == controller.filterCategory.value,
-              // TODO: localization
-              child: Text(mapCategories[category] ?? 'All messages'),
+              child: Text(
+                mapCategories[category] ??
+                    tr(AppStrings.tab_notifications_allMessages),
+              ),
             ),
           );
         },

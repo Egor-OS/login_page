@@ -33,10 +33,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   AppBar _buildAppBar() {
     return AppBar(
       centerTitle: true,
-      title: Text(
-        AppStrings.notifications.tr(),
-        style: Theme.of(context).textTheme.h3,
-      ),
+      title: Text(AppStrings.appBar_notifications.tr()),
       automaticallyImplyLeading: false,
       actions: <Widget>[
         Padding(
@@ -58,22 +55,23 @@ class _NotificationScreenState extends State<NotificationScreen> {
       appBar: _buildAppBar(),
       body: Obx(
         () {
-          final userNotifications = controller.dataByCategory.value[null];
+          final userNotifications = controller.dataByCategory.value['All'];
           return Column(
             children: [
               SizedBox(
                 height: 2,
-                child: controller.loadQueue.isNotEmpty
+                child: controller.listLoadingPages
+                        .contains(controller.filterCategory.value)
                     ? const LinearProgressIndicator()
                     : null,
               ),
               Expanded(
-                child: RefreshIndicator(
-                  onRefresh: controller.updateUserNotifications,
-                  child: userNotifications?.totalNotifications == 0
-                      ? const NoNotificationMessageWidget()
-                      : NotificationListWidget(controller: controller),
-                ),
+                child: userNotifications?.totalNotifications == 0
+                    ? RefreshIndicator(
+                        onRefresh: controller.updateUserNotifications,
+                        child: const NoNotificationMessageWidget(),
+                      )
+                    : NotificationListWidget(controller: controller),
               ),
             ],
           );

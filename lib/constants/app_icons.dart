@@ -7,6 +7,7 @@ abstract class AppIcons {
   static const String bannerFigure = 'assets/images/banner_figure.svg';
 
   static const String blueCup = 'assets/images/blue_cup.svg';
+  static const String locationMark = 'assets/images/locationMark.svg';
 
   static const String circleChevronRight =
       'assets/images/circle_chevron_right.svg';
@@ -64,4 +65,11 @@ abstract class AppIcons {
   static const String minusIcon = 'assets/icons/minus_icon.svg';
   static const String logOutIcon = 'assets/icons/log_out_icon.svg';
   static const String trashIcon = 'assets/icons/trash_icon.svg';
+
+  static const String checkIcon = 'assets/icons/check_icon.svg';
+
+  static const String deleteIcon = 'assets/icons/delete.svg';
+
+
+
 }

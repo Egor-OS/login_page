@@ -29,6 +29,12 @@ extension BrandTextTheme on TextTheme {
         fontSize: 18,
         height: 1.2,
       );
+  
+  TextStyle get h4 => baseTextStyle.copyWith(
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+        height: 1.2,
+      );
 
   TextStyle get bodyL => baseTextStyle.copyWith(
         fontSize: 18,

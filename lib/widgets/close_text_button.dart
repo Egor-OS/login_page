@@ -21,7 +21,7 @@ class CloseTextButton extends StatelessWidget {
         return Navigator.of(context).pop();
       },
       child: Text(
-        tr(AppStrings.close),
+        tr(AppStrings.button_close),
       ),
     );
   }

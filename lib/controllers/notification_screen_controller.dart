@@ -7,14 +7,10 @@ import 'package:training_and_testing/models/models.dart';
 class NotificationScreenController extends GetxController {
   NotificationScreenController(this._bonusesApi, this.userId);
 
-  //
   String userId;
 
-  //
   final BonusesApi? _bonusesApi;
 
-  ///
-  ///
   final notificationCategoryList = Rx<NotificationCategoryListModel?>(null);
 
   /// Map, where key is notification category identifier (categorySlug)
@@ -24,19 +20,18 @@ class NotificationScreenController extends GetxController {
 
   /// specified filter
   ///
-  final filterCategory = Rx<String?>(null);
+  final filterCategory = Rx<String>('All');
 
-  ///
-  ///
-  final loadQueue = <Future<NotificationsModel>?>[].obs;
+  ///  list of currently loaded categories
+  final listLoadingPages = RxList<String>([]);
 
+  /// caching notifications by category
   ///
-  ///
-  final dataByCategory = Rx<Map<String?, NotificationsModel?>>({null: null});
+  final dataByCategory = Rx<Map<String, NotificationsModel?>>({'All': null});
 
   /// getter forming a list of filters
   ///
-  List<String?> get listCategories => [null, ...mapCategories.value.keys];
+  List<String> get listCategories => ['All', ...mapCategories.value.keys];
 
   @override
   void onInit() {
@@ -47,19 +42,24 @@ class NotificationScreenController extends GetxController {
 
   /// [dataByCategory] update according to filter [filterCategory] set
   ///
-  ///
   Future<void> updateUserNotifications({int? countNotifications = 10}) async {
-    final task = _bonusesApi?.apiGetRequests.getNotificationsByCategory(
-      userId: userId,
-      filter: filterCategory.value,
-      count: countNotifications,
-    );
-    loadQueue.add(task);
-    dataByCategory.value[filterCategory.value] = await loadQueue.last;
-    loadQueue.remove(task);
+    final category = filterCategory.value;
+
+    listLoadingPages.add(category);
+
+    try {
+      dataByCategory.value[category] =
+          await _bonusesApi?.apiGetRequests.getNotificationsByCategory(
+        userId: userId,
+        filter: category,
+        count: countNotifications,
+      );
+    } finally {
+      listLoadingPages.remove(category);
+    }
   }
 
-  ///
+  /// load categories of notifications
   ///
   Future<void> updateCategories() async {
     notificationCategoryList.value =
@@ -96,7 +96,7 @@ class NotificationScreenController extends GetxController {
     return result;
   }
 
-  /// function of local change of notification status value
+  /// local change of notification status value
   ///
   void _setLocalNotificationStatus({
     required int index,

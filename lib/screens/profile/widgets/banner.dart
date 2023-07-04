@@ -21,11 +21,11 @@ class BalanceBanner extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Don't know",
+            tr(AppStrings.banner_profile_title1),
             style: Theme.of(context).textTheme.h2,
           ),
           Text(
-            'how to get bonuses?',
+            tr(AppStrings.banner_profile_title2),
             style: Theme.of(context)
                 .textTheme
                 .h2
@@ -47,7 +47,7 @@ class BalanceBanner extends StatelessWidget {
         ),
         child: BrandButton(
           type: ButtonType.secondary,
-          child: Text('Learn more'),
+          child: Text(tr(AppStrings.button_learnMore)),
           onPressed: () => log('learn more'),
         ),
       ),

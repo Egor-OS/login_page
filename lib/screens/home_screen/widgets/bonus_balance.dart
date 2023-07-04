@@ -34,7 +34,7 @@ class BonusBalance extends StatelessWidget {
               children: [
                 Text(
                   AppStrings.bonusBalance.tr(),
-                  style: appTheme.textTheme.h2,
+                  style: appTheme.textTheme.h3,
                 ),
                 const SizedBox(height: spacing4),
                 Row(

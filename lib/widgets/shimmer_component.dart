@@ -33,7 +33,7 @@ class Shimmer extends StatelessWidget {
           child: SizedBox(
             width: width,
             height: height,
-            child: Text('123'),
+            child: const Text('123'),
           ),
         ),
       )

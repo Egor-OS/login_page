@@ -1,4 +1,3 @@
-import 'package:training_and_testing/models/achievements_model.dart';
 import 'package:training_and_testing/models/models.dart';
 
 abstract class BonusesApiInterface {

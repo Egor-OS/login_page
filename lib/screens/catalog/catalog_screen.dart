@@ -7,6 +7,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:training_and_testing/api/config.dart';
 import 'package:training_and_testing/api/requests/get_requests.dart';
 import 'package:training_and_testing/api/services/dio_client.dart';
@@ -142,11 +143,11 @@ class CatalogScreenView extends StatelessWidget {
                           await _onAddToCartPressed(context, product);
                       print('wasAdded: $wasAdded');
 
-                      if (wasAdded) {
-                        Navigator.of(context).pop();
+                      if (wasAdded && context.mounted) {
+                        GoRouter.of(context).pop();
                       }
                     },
-                    child: Text('Add to cart'),
+                    child: Text(tr(AppStrings.button_addToCart)),
                   ),
                 ),
               ],
@@ -216,14 +217,15 @@ class CatalogScreenView extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).pop();
         },
-        child: Text(tr(AppStrings.close)),
+        child: Text(tr(AppStrings.button_close)),
       ),
-      title: Text(tr(AppStrings.size)),
+      title: Text(tr(AppStrings.bSheetTitle_size)),
       child: Column(
         children: [
           ...options.map(
             (option) => MenuItem(
               title: option,
+              isSelected: false,
               onPressed: () {
                 Navigator.of(context).pop(option);
               },

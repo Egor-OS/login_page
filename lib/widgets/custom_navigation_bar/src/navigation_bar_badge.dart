@@ -21,18 +21,18 @@ class BadgeText extends StatelessWidget {
     final appTheme = Theme.of(context);
     return show! && count != 0
         ? InfoBadge(
-          backgroundColor: appTheme.colorScheme.blue50,
-          padding: const EdgeInsets.symmetric(
-            vertical: padding3,
-            horizontal: padding8,
-          ),
-          borderRadius: borderRadius100,
-          child: Text(
-            count! > 10 ? '10+' : '$count',
-            style: appTheme.textTheme.notice,
-            textAlign: TextAlign.center,
-          ),
-        )
+            backgroundColor: appTheme.colorScheme.blue50,
+            padding: const EdgeInsets.symmetric(
+              vertical: padding3,
+              horizontal: padding8,
+            ),
+            borderRadius: borderRadius100,
+            child: Text(
+              count! > 10 ? '10+' : '$count',
+              style: appTheme.textTheme.notice,
+              textAlign: TextAlign.center,
+            ),
+          )
         : Container();
   }
 }

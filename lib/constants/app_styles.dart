@@ -20,6 +20,7 @@ const double padding12 = 12;
 const double padding16 = 16;
 const double padding20 = 20;
 const double padding24 = 24;
+const double padding28 = 28;
 const double padding32 = 32;
 
 // spacings

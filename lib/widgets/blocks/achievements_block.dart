@@ -62,7 +62,7 @@ class AchievementsBlock extends StatelessWidget {
       children: [
         BlockTemplate(
           header: BlockHeader(
-            title: AppStrings.myAchieves.tr(),
+            title: AppStrings.blockTitle_achieves.tr(),
             label: achievementsCount,
             trailing: trailing,
           ),

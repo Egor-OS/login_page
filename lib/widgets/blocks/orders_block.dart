@@ -55,7 +55,7 @@ class OrdersBlock extends StatelessWidget {
 
       return BlockTemplate(
         header: BlockHeader(
-            title: AppStrings.myOrders.tr(),
+            title: AppStrings.blockTitle_activeOrdrs.tr(),
             label: userOrders.totalOrders,
             padding: const EdgeInsets.symmetric(horizontal: padding16),
             trailing: trailing,
@@ -71,12 +71,10 @@ class _PlaceOrderButton extends StatelessWidget {
     required this.buttonWidth,
     this.contentColor,
     this.textStyle,
-    this.iconSize,
   });
 
   final Color? contentColor;
   final TextStyle? textStyle;
-  final double? iconSize;
   final double buttonWidth;
 
   @override
@@ -93,11 +91,10 @@ class _PlaceOrderButton extends StatelessWidget {
             SvgAsset.squared(
               assetName: AppIcons.addCircleOutlineIcon,
               color: contentColor,
-              size: iconSize,
             ),
             const SizedBox(height: spacing8),
             Text(
-              AppStrings.placeNewOrder.tr(),
+              AppStrings.button_placeNewOrd.tr(),
               style: textStyle?.copyWith(color: contentColor),
               textAlign: TextAlign.center,
             ),

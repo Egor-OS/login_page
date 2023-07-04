@@ -19,7 +19,7 @@ class LogOutButtonWidget extends StatelessWidget {
 
   final TextStyle? textStyle;
 
-  final Function()? onPressed;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {

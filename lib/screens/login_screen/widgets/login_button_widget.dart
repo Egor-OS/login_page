@@ -6,7 +6,6 @@ import 'package:training_and_testing/controllers/auth_controller.dart';
 import 'package:training_and_testing/theme/app_colors.dart';
 import 'package:training_and_testing/theme/app_typography.dart';
 import 'package:training_and_testing/widgets/preloader.dart';
-import 'package:training_and_testing/widgets/snack_bar_notification.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
 class LoginButtonWidget extends StatefulWidget {
@@ -24,7 +23,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      // After starting the authorization process, 
+      // After starting the authorization process,
       //lock the button and replace it with the loader button
       if (!widget.authController.inAuthProcess.value) {
         return _buildGoogleButton(context);
@@ -43,13 +42,13 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
         // If authorization is successful
         if (widget.authController.isLoggedIn.value)
           SnackBarNotification(
-            AppStrings.authorizationWasSuccessful.tr(),
+            AppStrings.snackBarMes_authSucces.tr(),
             type: SnackBarType.positive,
           ).show(context)
         // If authorization is unsuccessful
         else
           SnackBarNotification(
-            AppStrings.authorizationFailed.tr(),
+            AppStrings.snackBarMes_authFiled.tr(),
             type: SnackBarType.negative,
           ).show(context),
         widget.authController.inAuthProcess.value = false,
@@ -60,7 +59,7 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
           const SvgAsset(assetName: AppIcons.googleIcon),
           const SizedBox(width: spacing10),
           Text(
-            AppStrings.loginWithGoogle.tr(),
+            AppStrings.button_loginGoogle.tr(),
             style: Theme.of(context).textTheme.buttonL,
           )
         ],

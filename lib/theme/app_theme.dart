@@ -6,7 +6,7 @@ import 'package:training_and_testing/theme/app_colors.dart';
 import 'package:training_and_testing/theme/app_typography.dart';
 import 'package:training_and_testing/utils/utils.dart';
 
-import '../widgets/widgets.dart';
+import 'package:training_and_testing/widgets/widgets.dart';
 
 abstract class AppThemeBase {
   const AppThemeBase();
@@ -121,6 +121,11 @@ class BrandThemeData extends AppThemeBase {
       inputDecorationTheme: _buildInputDecorationTheme(),
     );
 
+    // build input appBar theme
+    _themeData = _themeData.copyWith(
+      appBarTheme: AppBarTheme(titleTextStyle: _themeData.textTheme.h3),
+    );
+
     return _themeData;
   }
 
@@ -138,6 +143,9 @@ class BrandThemeData extends AppThemeBase {
       floatingLabelStyle: textTheme.h3.light.copyWith(
         color: colorSheme.white.withOpacity(0.4),
       ),
+      errorStyle: textTheme.bodyM.light.copyWith(
+        color: colorSheme.red,
+      ),
 
       // borders
       border: const CustomInputBorder(),
@@ -149,6 +157,12 @@ class BrandThemeData extends AppThemeBase {
       ),
       disabledBorder: CustomInputBorder(
         borderSide: BorderSide(color: colorScheme.grey10.withOpacity(0.2)),
+      ),
+      errorBorder: CustomInputBorder(
+        borderSide: BorderSide(color: colorScheme.red),
+      ),
+      focusedErrorBorder: CustomInputBorder(
+        borderSide: BorderSide(color: colorScheme.red),
       ),
 
       //
@@ -162,7 +176,7 @@ class BrandThemeData extends AppThemeBase {
 
     return _themeData.textTheme
         .copyWith(
-          // InputDecoration text style 
+          // InputDecoration text style
           bodyLarge: textTheme.bodyL.light,
 
           bodyMedium: textTheme.bodyL,
@@ -222,16 +236,17 @@ class BrandThemeData extends AppThemeBase {
       iconColor: MaterialStateProperty.resolveWith(
         (states) {
           if (states.contains(MaterialState.disabled)) {
-            return colors.grey90;
+            return colors.white.withOpacity(0.24);
           }
 
           return colors.blue50;
         },
       ),
+      overlayColor: const MaterialStatePropertyAll(Colors.transparent),
       foregroundColor: MaterialStateProperty.resolveWith(
         (states) {
           if (states.contains(MaterialState.disabled)) {
-            return colors.grey90;
+            return colors.white.withOpacity(0.24);
           }
 
           return colors.blue50;

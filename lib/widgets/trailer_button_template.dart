@@ -14,7 +14,7 @@ class TrailerButtonTemplate extends StatelessWidget {
 
   factory TrailerButtonTemplate.add({
     required String title,
-    Function()? onTap,
+    void Function()? onTap,
   }) {
     return TrailerButtonTemplate(
       iconAsset: AppIcons.addIcon,
@@ -25,7 +25,7 @@ class TrailerButtonTemplate extends StatelessWidget {
 
   final String title;
 
-  final Function()? onTap;
+  final void Function()? onTap;
 
   final String? iconAsset;
 
@@ -51,15 +51,13 @@ class TrailerButtonTemplate extends StatelessWidget {
         child: child,
       );
     } else {
-      final icon = SvgAsset.squared(
-        assetName: iconAsset!,
-        size: iconSize10,
-      );
       return BrandButton.icon(
         padding: padding,
         type: type,
         onPressed: onTap,
-        icon: icon,
+        foregroundColor: Colors.amber,
+        icon: SvgIconWrapper(iconAsset!),
+        gap: spacing12,
         child: child,
       );
     }

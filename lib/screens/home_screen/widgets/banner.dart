@@ -9,16 +9,26 @@ import 'package:training_and_testing/theme/app_typography.dart';
 import 'package:training_and_testing/widgets/future_widget.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
-class MainBanner extends StatelessWidget {
-  MainBanner({required this.homeScreenController, super.key});
+class MainBanner extends StatefulWidget {
+  const MainBanner({required this.homeScreenController, super.key});
 
   final HomeScreenController homeScreenController;
 
-  late final ThemeData _appTheme;
+  @override
+  State<MainBanner> createState() => _MainBannerState();
+}
+
+class _MainBannerState extends State<MainBanner> {
+  // late final ThemeData _appTheme;
+
+  @override
+  void initState() {
+    // _appTheme = _appTheme = Theme.of(context);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    _appTheme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: padding16,
@@ -34,9 +44,10 @@ class MainBanner extends StatelessWidget {
               items: [_firstCard(), _secondCard()],
             ),
             FutureWidget(
-              homeScreenController.updateUserBalance(),
+              widget.homeScreenController.updateUserBalance(),
               Obx(() {
-                final userBalance = homeScreenController.userBalance.value;
+                final userBalance =
+                    widget.homeScreenController.userBalance.value;
                 if (userBalance == null) return const SizedBox();
                 return BonusBalance(userBalance: userBalance);
               }),
@@ -48,8 +59,9 @@ class MainBanner extends StatelessWidget {
   }
 
   BannerCard _firstCard() {
+    final appTheme = Theme.of(context);
     return BannerCard(
-      cardColor: _appTheme.colorScheme.blue70,
+      cardColor: appTheme.colorScheme.blue70,
       backgroundImageAlignment: Alignment.bottomRight,
       backgroundImage: const SvgAsset(
         assetName: AppIcons.bannerFigure,
@@ -60,26 +72,25 @@ class MainBanner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.toBuySomething.tr().toUpperCase(),
-              style: _appTheme.textTheme.hero,
+              AppStrings.banner_main_first_title1.tr().toUpperCase(),
+              style: appTheme.textTheme.hero,
             ),
             Text(
-              AppStrings.needToGetBonuses.tr().toUpperCase(),
-              style: _appTheme.textTheme.hero
-                  .copyWith(color: _appTheme.colorScheme.blue30),
+              AppStrings.banner_main_first_title2.tr().toUpperCase(),
+              style: appTheme.textTheme.hero
+                  .copyWith(color: appTheme.colorScheme.blue30),
             ),
             const SizedBox(height: spacing4),
             Text(
-              AppStrings.youHaveALotOfBonusesYouCanOrderSomethingForYourself
-                  .tr(),
-              style: _appTheme.textTheme.bodyM,
+              AppStrings.banner_main_first_text.tr(),
+              style: appTheme.textTheme.bodyM,
             ),
             const Expanded(child: SizedBox()),
             BrandButton(
               type: ButtonType.secondary,
-              foregroundColor: _appTheme.colorScheme.white,
+              foregroundColor: appTheme.colorScheme.white,
               onPressed: () {},
-              child: Text(AppStrings.howToGetTheBonuses.tr()),
+              child: Text(AppStrings.button_howToGetBons.tr()),
             ),
           ],
         ),
@@ -88,12 +99,13 @@ class MainBanner extends StatelessWidget {
   }
 
   BannerCard _secondCard() {
+    final appTheme = Theme.of(context);
     return BannerCard(
-      cardColor: _appTheme.colorScheme.grey70,
+      cardColor: appTheme.colorScheme.grey70,
       backgroundImageAlignment: Alignment.bottomRight,
       backgroundImage: SvgAsset(
         assetName: AppIcons.bannerFigure,
-        color: _appTheme.colorScheme.grey50,
+        color: appTheme.colorScheme.grey50,
       ),
       child: Padding(
         padding: const EdgeInsets.all(padding24),
@@ -101,26 +113,25 @@ class MainBanner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.toSpendBonuses.tr().toUpperCase(),
-              style: _appTheme.textTheme.hero,
+              AppStrings.banner_main_second_title1.tr().toUpperCase(),
+              style: appTheme.textTheme.hero,
             ),
             Text(
-              AppStrings.selectSomething.tr().toUpperCase(),
-              style: _appTheme.textTheme.hero
-                  .copyWith(color: _appTheme.colorScheme.yellow),
+              AppStrings.banner_main_second_title2.tr().toUpperCase(),
+              style: appTheme.textTheme.hero
+                  .copyWith(color: appTheme.colorScheme.yellow),
             ),
             const SizedBox(height: spacing4),
             Text(
-              AppStrings.youHaveALotOfBonusesYouCanOrderSomethingForYourself
-                  .tr(),
-              style: _appTheme.textTheme.bodyM,
+              AppStrings.banner_main_second_text.tr(),
+              style: appTheme.textTheme.bodyM,
             ),
             const Expanded(child: SizedBox()),
             BrandButton(
-              backgroundColor: _appTheme.colorScheme.yellow,
-              foregroundColor: _appTheme.colorScheme.black,
+              backgroundColor: appTheme.colorScheme.yellow,
+              foregroundColor: appTheme.colorScheme.black,
               onPressed: () {},
-              child: Text(AppStrings.goToCatalog.tr()),
+              child: Text(AppStrings.button_goToCatalog.tr()),
             ),
           ],
         ),

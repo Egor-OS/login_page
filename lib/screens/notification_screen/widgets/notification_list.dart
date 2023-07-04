@@ -21,28 +21,33 @@ class NotificationListWidget extends StatelessWidget {
       }
     });
 
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: FilterPanelWidget(controller, pageController),
-        ),
-        SliverFillRemaining(
-          child: PageView.builder(
-            controller: pageController,
-            itemCount: controller.listCategories.length,
-            itemBuilder: (context, index) {
-              final filter = controller.listCategories[index];
-              final userNotifications = controller.dataByCategory.value[filter];
-              return RefreshIndicator(
-                onRefresh: controller.updateUserNotifications,
-                child: (userNotifications != null)
-                    ? NotificationItemWidget(controller, userNotifications)
-                    : const SizedBox.shrink(),
-              );
-            },
+    return NestedScrollView(
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+          SliverAppBar(
+            automaticallyImplyLeading: false,
+            title: FilterPanelWidget(controller, pageController),
+            titleSpacing: 0,
+            floating: true,
           ),
-        ),
-      ],
+        ];
+      },
+      body: PageView.builder(
+        controller: pageController,
+        itemCount: controller.listCategories.length,
+        itemBuilder: (context, index) {
+          final filter = controller.listCategories[index];
+          final userNotifications = controller.dataByCategory.value[filter];
+          return 
+          RefreshIndicator(
+            onRefresh: controller.updateUserNotifications,
+            child: 
+            (userNotifications != null)
+                ? NotificationItemWidget(controller, userNotifications)
+                : const SizedBox.shrink(),
+          );
+        },
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/screens/screens.dart';
@@ -70,13 +71,13 @@ class CartProductCard extends StatelessWidget {
                     children: [
                       CounterPill(
                         onPressed: () {},
-                        label: 'QTY:',
+                        label: tr(AppStrings.badge_qty),
                         value: quantity.toString(),
                       ),
                       if (selectedOption != null)
                         CounterPill(
                           onPressed: () {},
-                          label: 'SIZE:',
+                          label: tr(AppStrings.badge_size),
                           value: selectedOption.toString(),
                         ),
                     ],

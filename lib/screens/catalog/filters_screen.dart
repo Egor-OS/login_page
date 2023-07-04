@@ -23,7 +23,7 @@ class FiltersScreen extends StatelessWidget {
           ),
         ),
         title: Text(
-          tr(AppStrings.catalogFilters),
+          tr(AppStrings.appBar_catalogFltr),
           style: textTheme.h3,
         ),
       ),

@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
 import 'package:training_and_testing/router/app_route_names.dart';
 import 'package:training_and_testing/screens/faq/faq_screen.dart';
-import 'package:training_and_testing/screens/profile/edit_profile_screen.dart';
 import 'package:training_and_testing/screens/screens.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -16,10 +15,10 @@ class RoutesBonusesApp {
 
   late final _router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    // initialLocation: '/${AppRouteNames.home}',
+    initialLocation: '/${AppRouteNames.home}',
     // while working on catalog screen, uncomment the line above and comment
     // the line below to set the app initial location.
-    initialLocation: '/${AppRouteNames.catalog}',
+    // initialLocation: '/${AppRouteNames.catalog}',
     routes: [
       AppRoute.root(path: AppRouteNames.login, widget: const LogInScreen()),
       StatefulShellRoute(
@@ -64,20 +63,44 @@ class RoutesBonusesApp {
           StatefulShellBranch(
             routes: [
               AppRoute.root(
-                  path: AppRouteNames.profile,
-                  widget: ProfileScreen(),
-                  routes: [
-                    AppRoute(
-                      parentNavigatorKey: _rootNavigatorKey,
-                      path: AppRouteNames.editProfile,
-                      widget: EditProfileScreen(),
-                    ),
-                    AppRoute(
-                      parentNavigatorKey: _rootNavigatorKey,
-                      path: AppRouteNames.faq,
-                      widget: FaqScreen(),
-                    )
-                  ]),
+                path: AppRouteNames.profile,
+                widget: ProfileScreen(),
+                routes: [
+                  AppRoute(
+                    parentNavigatorKey: _rootNavigatorKey,
+                    path: AppRouteNames.editProfile,
+                    widget: const EditProfileScreen(),
+                    routes: [
+                      AppRoute(
+                        parentNavigatorKey: _rootNavigatorKey,
+                        path: AppRouteNames.addAddress,
+                        widget: const AddressScreen(),
+                      ),
+                      AppRoute(
+                        parentNavigatorKey: _rootNavigatorKey,
+                        path: AppRouteNames.editAddress,
+                        widget: AddressScreen.edit(),
+                      ),
+                      AppRoute(
+                        parentNavigatorKey: _rootNavigatorKey,
+                        path: AppRouteNames.phoneConfirm,
+                        widget: const PhoneConfirmScreen(),
+                      ),
+                      
+                    ],
+                  ),
+                  AppRoute(
+                    parentNavigatorKey: _rootNavigatorKey,
+                    path: AppRouteNames.faq,
+                    widget: const FaqScreen(),
+                  ),
+                  AppRoute(
+                    parentNavigatorKey: _rootNavigatorKey,
+                    path: AppRouteNames.feedback,
+                    widget: FeedbackScreen(),
+                  )
+                ],
+              ),
             ],
           )
         ],
@@ -98,20 +121,20 @@ class RoutesBonusesApp {
             navigationShell,
       ),
     ],
-    // // commented until catalog screen is in progress
-    // redirect: (context, state) {
-    //   if (!authController.isLoggedIn.value) {
-    //     return (state.matchedLocation == '/${AppRouteNames.login}')
-    //         ? null
-    //         : '/${AppRouteNames.login}';
-    //   }
-    //   return (state.matchedLocation == '/${AppRouteNames.login}')
-    //       ? Future.delayed(const Duration(seconds: 3), () {
-    //           return '/${AppRouteNames.home}';
-    //         })
-    //       : null;
-    // },
-    // refreshListenable: authController,
+    // commented until catalog screen is in progress
+    redirect: (context, state) {
+      if (!authController.isLoggedIn.value) {
+        return (state.matchedLocation == '/${AppRouteNames.login}')
+            ? null
+            : '/${AppRouteNames.login}';
+      }
+      return (state.matchedLocation == '/${AppRouteNames.login}')
+          ? Future.delayed(const Duration(seconds: 3), () {
+              return '/${AppRouteNames.home}';
+            })
+          : null;
+    },
+    refreshListenable: authController,
   );
 }
 

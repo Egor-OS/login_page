@@ -5,7 +5,7 @@ import 'package:training_and_testing/screens/screens.dart';
 import 'package:training_and_testing/theme/theme.dart';
 import 'package:training_and_testing/utils/utils.dart';
 
-import 'widgets.dart';
+import 'package:training_and_testing/widgets/widgets.dart';
 
 /// {@template profile_preview}
 /// [Row] showing the users profile icon and his full name.

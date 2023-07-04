@@ -1,8 +1,12 @@
+export 'address/address.dart';
 export 'cart/cart.dart';
 export 'catalog/catalog.dart';
+export 'edit_profile/edit_profile.dart';
+export 'feedback/feedback_screen.dart';
 export 'home_screen/home.dart';
 export 'login_screen/login.dart';
 export 'main_scaffold/main_scaffold.dart';
 export 'notification_screen/notification.dart';
 export 'notification_screen/notification_screen.dart';
+export 'phone_confirm/phone_confirm.dart';
 export 'profile/profile_screen.dart';

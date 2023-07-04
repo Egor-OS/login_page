@@ -53,7 +53,7 @@ class AppNavigationBar extends StatefulWidget {
   ///
   /// callback function when item tapped
   ///
-  final Function(int)? onTap;
+  final void Function(int)? onTap;
 
   ///
   /// current index of navigation bar.

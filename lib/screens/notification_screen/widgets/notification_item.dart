@@ -35,7 +35,7 @@ class NotificationItemWidget extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: padding4),
             child: LabelBadge.newLabel(
-              content: AppStrings.new_.tr().toUpperCase(),
+              content: AppStrings.badge_new.tr().toUpperCase(),
             ),
           )
       ],
@@ -56,8 +56,9 @@ class NotificationItemWidget extends StatelessWidget {
           backgroundColor: Colors.transparent,
           onPressed: (_) async {
             final res = await controller.reverseNotificationStatus(index);
-            // TODO: user inform
-            if (!res) SnackBarNotification('message').show(context);
+            if (context.mounted && !res) {
+              SnackBarNotification('message').show(context);
+            }
           },
           child: SvgAsset.squared(
             size: iconSize24,

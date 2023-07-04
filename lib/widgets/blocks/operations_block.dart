@@ -7,7 +7,6 @@ import 'package:training_and_testing/models/models.dart';
 import 'package:training_and_testing/theme/app_colors.dart';
 import 'package:training_and_testing/theme/app_typography.dart';
 import 'package:training_and_testing/utils/utils.dart';
-import 'package:training_and_testing/widgets/description_card.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
 class OperationsBlock extends StatelessWidget {
@@ -87,7 +86,7 @@ class OperationsBlock extends StatelessWidget {
 
       return BlockTemplate(
         header: BlockHeader(
-          title: AppStrings.lastOperations.tr(),
+          title: AppStrings.blockTitle_lastOperat.tr(),
           label: userOperations.totalOperations,
           padding: const EdgeInsets.symmetric(horizontal: padding16),
           trailing: trailing,

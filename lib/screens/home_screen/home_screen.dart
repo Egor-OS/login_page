@@ -7,7 +7,6 @@ import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
 import 'package:training_and_testing/screens/home_screen/widgets/widgets.dart';
 import 'package:training_and_testing/widgets/future_widget.dart';
-import 'package:training_and_testing/widgets/snack_bar_notification.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -91,7 +90,7 @@ class HomeScreen extends StatelessWidget {
               BonusesOptionButton(
                 title: '*',
                 onPressed: () => SnackBarNotification(
-                  AppStrings.authorizationFailed.tr(),
+                  AppStrings.snackBarMes_authFiled.tr(),
                   type: SnackBarType.positive,
                 ).show(context),
               ),
@@ -100,13 +99,13 @@ class HomeScreen extends StatelessWidget {
 
               BonusesOptionButton(
                 iconPath: AppIcons.writeIcon,
-                title: AppStrings.writeAnArticle.tr(),
+                title: AppStrings.banner_main_bonus_btn1.tr(),
                 onPressed: () {},
               ),
               const SizedBox(width: spacing8),
               BonusesOptionButton(
                 iconPath: AppIcons.speakerIcon,
-                title: AppStrings.speakAtTheConference.tr(),
+                title: AppStrings.banner_main_bonus_btn2.tr(),
                 onPressed: () {},
               ),
             ],
@@ -122,7 +121,7 @@ class HomeScreen extends StatelessWidget {
       child: BrandButton(
         onPressed: () {},
         size: ButtonSize.large,
-        child: Text(AppStrings.getBonuses.tr()),
+        child: Text(AppStrings.button_getBonuses.tr()),
       ),
     );
   }

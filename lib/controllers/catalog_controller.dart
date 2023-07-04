@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:api_handler/api_handler.dart';
 import 'package:catalog_api/catalog_api.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:training_and_testing/api/requests/get_requests_interface.dart';

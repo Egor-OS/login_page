@@ -1,8 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
-import 'package:training_and_testing/theme/theme.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
 class FaqScreen extends StatefulWidget {
@@ -26,10 +26,7 @@ class _FaqScreenState extends State<FaqScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'FAQ',
-          style: Theme.of(context).textTheme.h3,
-        ),
+        title: Text(tr(AppStrings.appBar_faq)),
       ),
       body: Obx(() {
         final listFAQ = controller.faqData.value?.listFAQ;
@@ -43,24 +40,24 @@ class _FaqScreenState extends State<FaqScreen> {
                   : null,
             ),
             if (listFAQ != null)
-            Expanded(
-              child: RefreshIndicator(
-                onRefresh: controller.updateFaqData,
-                child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: padding16,
-                    vertical: padding24,
+              Expanded(
+                child: RefreshIndicator(
+                  onRefresh: controller.updateFaqData,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: padding16,
+                      vertical: padding24,
+                    ),
+                    itemCount: controller.faqData.value?.totalFAQ,
+                    itemBuilder: (context, index) {
+                      return DropDownTextWidget(
+                        title: listFAQ[index].question,
+                        description: listFAQ[index].answer,
+                      ).paddingOnly(bottom: padding16);
+                    },
                   ),
-                  itemCount: controller.faqData.value?.totalFAQ,
-                  itemBuilder: (context, index) {
-                    return DropDownTextWidget(
-                      title: listFAQ[index].question,
-                      description: listFAQ[index].answer,
-                    ).paddingOnly(bottom: padding16);
-                  },
                 ),
               ),
-            ),
           ],
         );
       }),

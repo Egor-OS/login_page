@@ -1,4 +1,3 @@
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:training_and_testing/constants/constants.dart';
@@ -22,11 +21,11 @@ class NoNotificationMessageWidget extends StatelessWidget {
               ),
               const SizedBox(height: padding12),
               Text(
-                AppStrings.youHave.tr().toUpperCase(),
+                AppStrings.noNotifMes_title1.tr().toUpperCase(),
                 style: Theme.of(context).textTheme.hero,
               ),
               Text(
-                AppStrings.noMessages.tr().toUpperCase(),
+                AppStrings.noNotifMes_title2.tr().toUpperCase(),
                 style: Theme.of(context)
                     .textTheme
                     .hero

@@ -24,13 +24,11 @@ class DropDownTextWidget extends StatefulWidget {
 class _DropDownTextWidgetState extends State<DropDownTextWidget>
     with TickerProviderStateMixin {
   String get title => widget.title;
-
   String get description => widget.description;
+  bool get isOpened => _controller.isCompleted;
 
   late final AnimationController _controller;
   late final Animation<double> _animation;
-
-  bool isOpened = false;
 
   @override
   void initState() {
@@ -56,94 +54,84 @@ class _DropDownTextWidgetState extends State<DropDownTextWidget>
     super.dispose();
   }
 
-  Widget _buildHeader(BuildContext context) {
-    return GestureDetector(
-      onTap: () => setState(() {
-        isOpened = !_controller.isCompleted;
-      }),
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: !isOpened & !_controller.isAnimating
-                ? BorderSide(
-                    color: Theme.of(context).colorScheme.white.withOpacity(0.4),
-                  )
-                : BorderSide.none,
+  Widget _buildHeader() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.bodyL.semibold,
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
+        if (isOpened)
+          SvgAsset(
+            assetName: AppIcons.chevronUp,
+            color: Theme.of(context).colorScheme.white,
+          )
+        else
+          SvgAsset(
+            assetName: AppIcons.chevronDown,
+            color: Theme.of(context).colorScheme.white.withOpacity(0.4),
+          ),
+      ],
+    ).paddingSymmetric(vertical: padding16);
+  }
+
+  Widget _buildDescription() {
+    return Container(
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height / 2,
+      ),
+      child: SingleChildScrollView(
+        child: SizeTransition(
+          axisAlignment: 1,
+          sizeFactor: _animation,
+          child: SizedBox(
+            width: double.maxFinite,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: padding24),
               child: Text(
-                title,
-                style: Theme.of(context).textTheme.bodyL.semibold,
+                description,
+                style: Theme.of(context).textTheme.bodyM.light,
               ),
             ),
-            if (isOpened)
-              SvgAsset(
-                assetName: AppIcons.chevronUp,
-                color: Theme.of(context).colorScheme.white,
-              )
-            else
-              SvgAsset(
-                assetName: AppIcons.chevronDown,
-                color: Theme.of(context).colorScheme.white.withOpacity(0.4),
-              ),
-          ],
-        ).paddingSymmetric(vertical: padding16),
+          ),
+        ),
       ),
     );
   }
 
-  Widget _buildDescriptionField(BuildContext context) {
-    return Container(
-      width: double.maxFinite,
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: isOpened
-                ? Theme.of(context).colorScheme.grey10
-                : Theme.of(context).colorScheme.white.withOpacity(0.4),
-          ),
-        ),
+  Border _buildBorder() {
+    return Border(
+      bottom: BorderSide(
+        color: isOpened && !_controller.isAnimating
+            ? Theme.of(context).colorScheme.grey10
+            : Theme.of(context).colorScheme.white.withOpacity(0.4),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: padding24),
-        child: Text(
-          description,
-          style: Theme.of(context).textTheme.bodyM.light,
-        ),
-      ),
-    ).paddingZero;
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    isOpened ? _controller.forward() : _controller.reverse();
-    // .whenComplete(() => setState(() {}));
-
-    _controller.addListener(() {
-      if (_controller.value == 0) {
-        setState(() {});
-      }
-    });
-
     return Column(
       children: [
-        _buildHeader(context),
-        Container(
-          constraints: BoxConstraints(
-            maxHeight: MediaQuery.of(context).size.height / 2,
-          ),
-          child: SingleChildScrollView(
-            child: SizeTransition(
-              axisAlignment: 1,
-              sizeFactor: _animation,
-              child: _buildDescriptionField(context).paddingZero,
+        GestureDetector(
+          onTap: () => setState(() {
+            !isOpened
+                ? _controller.forward().whenComplete(() => setState(() {}))
+                : _controller.reverse();
+          }),
+          child: DecoratedBox(
+            decoration: BoxDecoration(border: _buildBorder()),
+            child: Column(
+              children: [
+                _buildHeader(),
+                _buildDescription(),
+              ],
             ),
           ),
-        ),
+        )
       ],
     );
   }

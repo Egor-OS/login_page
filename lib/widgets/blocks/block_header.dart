@@ -27,7 +27,7 @@ class BlockHeader extends StatelessWidget {
       padding: padding,
       child: Row(
         children: [
-          Text(title, style: Theme.of(context).textTheme.h2),
+          Text(title, style: Theme.of(context).textTheme.h3),
           if (label != null) ...[
             const SizedBox(width: spacing4),
             CountBadge(

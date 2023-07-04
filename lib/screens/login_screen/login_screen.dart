@@ -26,9 +26,8 @@ class _LogInScreenState extends State<LogInScreen> {
 
     return Scaffold(
       backgroundColor: appTheme.colorScheme.backgroundColor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-      ),
+      // TODO:
+      appBar: AppBar(backgroundColor: Colors.transparent),
       extendBodyBehindAppBar: true,
       body: Obx(
         () => BackgroundImageCard(
@@ -50,9 +49,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 const SizedBox(height: spacing80),
                 // Text
                 Text(
-                  AppStrings.getBonusesAndExchangeThemForBrandedProducts
-                      .tr()
-                      .toUpperCase(),
+                  AppStrings.welcomMes.tr().toUpperCase(),
                   style: titleTextStyle,
                 ),
                 // Login button

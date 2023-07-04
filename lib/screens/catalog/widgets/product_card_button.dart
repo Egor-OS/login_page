@@ -1,4 +1,5 @@
 import 'package:catalog_api/catalog_api.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/theme/theme.dart';
@@ -51,19 +52,20 @@ class ProductCardButton extends StatelessWidget {
             child: BrandButton(
               onPressed: () {},
               type: ButtonType.secondary,
-              child: const Text('Place order'),
+              child: Text(tr(AppStrings.button_placeOrder)),
+              
             ),
           ),
         ],
       );
     }
 
-    return const Row(
+    return Row(
       children: [
         Expanded(
           child: BrandButton(
             type: ButtonType.secondary,
-            child: Text('Soon'),
+            child: Text(tr(AppStrings.button_soon)),
           ),
         ),
       ],

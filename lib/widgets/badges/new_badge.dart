@@ -9,7 +9,7 @@ class NewBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LabelBadge.newLabel(
-      content: tr(AppStrings.newBadge).toUpperCase(),
+      content: tr(AppStrings.badge_new).toUpperCase(),
     );
   }
 }

@@ -8,4 +8,10 @@ abstract class AppRouteNames {
   static const String catalog = 'catalog';
   static const String catalogFilters = 'catalog-filters';
   static const String cart = 'cart';
+  static const String feedback = 'feedback';
+  static const String addAddress = 'add_address';
+  static const String editAddress = 'edit_address';
+  static const String phoneConfirm = 'phoneConfirm';
+  
+
 }
