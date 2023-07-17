@@ -35,6 +35,7 @@ const double spacing24 = 24;
 const double spacing32 = 32;
 const double spacing40 = 40;
 const double spacing44 = 44;
+const double spacing64 = 64;
 const double spacing80 = 80;
 
 // icon sizes

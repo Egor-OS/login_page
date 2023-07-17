@@ -69,7 +69,8 @@ final cartProducts = [
   {
     'id': '353768da-94cf-4599-82ac-194d4972d93f',
     'title': 'Large white t-shirt with big Altenar logo',
-    'imageUrl': 'https://www.dup-lex.fr/images/product-7.jpg',
+    'imageUrl':
+        'https://i1.sndcdn.com/artworks-000478824060-9pupkh-t3000x3000.jpg',
     'description':
         'This white t-shirt features a vibrant logo on the front, adding a pop of color to your look. Made with high-quality cotton, it feels soft and comfortable against your skin. Perfect for casual occasions or just lounging around at home, this t-shirt is sure to become an essential in your wardrobe.',
     'price': 240,

@@ -1,4 +1,5 @@
 export 'address/address.dart';
+export 'bonuses/bonuses.dart';
 export 'cart/cart.dart';
 export 'catalog/catalog.dart';
 export 'edit_profile/edit_profile.dart';

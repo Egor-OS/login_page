@@ -33,7 +33,12 @@ class RoutesBonusesApp {
                     parentNavigatorKey: _rootNavigatorKey,
                     path: AppRouteNames.notifications,
                     widget: const NotificationScreen(),
-                  )
+                  ),
+                  AppRoute(
+                    parentNavigatorKey: _rootNavigatorKey,
+                    path: AppRouteNames.bonuses,
+                    widget: BonusesScreen(),
+                  ),
                 ],
               ),
             ],
@@ -86,7 +91,6 @@ class RoutesBonusesApp {
                         path: AppRouteNames.phoneConfirm,
                         widget: const PhoneConfirmScreen(),
                       ),
-                      
                     ],
                   ),
                   AppRoute(
@@ -102,7 +106,7 @@ class RoutesBonusesApp {
                 ],
               ),
             ],
-          )
+          ),
         ],
         navigatorContainerBuilder: (
           BuildContext context,

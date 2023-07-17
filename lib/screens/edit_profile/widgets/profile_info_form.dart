@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reactive_forms/reactive_forms.dart';
+import 'package:training_and_testing/api/bonuses_api.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
 import 'package:training_and_testing/models/models.dart';
+import 'package:training_and_testing/router/router.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
-import '../../../router/router.dart';
-
-enum _controlNames { name, surname, email, phone }
+enum _ControlNames { name, surname, email, phone }
 
 class ProfileInfoForm extends StatefulWidget {
   const ProfileInfoForm(this.controller, {super.key});
@@ -30,78 +30,88 @@ class _ProfileInfoFormState extends State<ProfileInfoForm> {
   @override
   void initState() {
     form = FormGroup({});
-    controller.addListener(() {
-      (controller.isActionLock) ? _lockPhoneField() : _unlockPhoneField();
-    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      return ReactiveForm(
-        formGroup: form,
-        child: Column(
-          children: [
-            BasicFormField(
-              params: GeneralFormFieldParams(
-                form: form,
-                controlName: _controlNames.name.name,
-                label: tr(AppStrings.textField_name),
-                disabled: true,
-                initialValue: profileInfo?.name,
-              ),
-            ),
-            BasicFormField(
-              params: GeneralFormFieldParams(
-                form: form,
-                controlName: _controlNames.surname.name,
-                label: tr(AppStrings.textField_surname),
-                disabled: true,
-                initialValue: profileInfo?.surname,
-              ),
-            ),
-            BasicFormField(
-              params: GeneralFormFieldParams(
-                form: form,
-                controlName: _controlNames.email.name,
-                label: tr(AppStrings.textField_email),
-                disabled: true,
-                initialValue: profileInfo?.email,
-              ),
-            ),
-            PhoneFormField(
-              params: GeneralFormFieldParams(
-                form: form,
-                controlName: _controlNames.phone.name,
-                label: tr(AppStrings.textField_mPhone),
-                initialValue: profileInfo?.phone,
-                disabled: true,
-                keyboardType: const TextInputType.numberWithOptions(
-                  signed: true,
-                  decimal: true,
+    return GetBuilder<ProfileController>(
+      builder: (_) {
+        return ReactiveForm(
+          formGroup: form,
+          child: Column(
+            children: [
+              BasicFormField(
+                params: GeneralFormFieldParams(
+                  form: form,
+                  controlName: _ControlNames.name.name,
+                  label: tr(AppStrings.textField_name),
+                  disabled: true,
+                  initialValue: profileInfo?.name,
                 ),
               ),
-              buttonText: tr(AppStrings.button_confirm),
-              buttonOnPressed: () =>
-                  GoRouter.of(context).pushNamed(AppRouteNames.phoneConfirm),
-            ),
-          ],
-        ),
-      );
+              BasicFormField(
+                params: GeneralFormFieldParams(
+                  form: form,
+                  controlName: _ControlNames.surname.name,
+                  label: tr(AppStrings.textField_surname),
+                  disabled: true,
+                  initialValue: profileInfo?.surname,
+                ),
+              ),
+              BasicFormField(
+                params: GeneralFormFieldParams(
+                  form: form,
+                  controlName: _ControlNames.email.name,
+                  label: tr(AppStrings.textField_email),
+                  disabled: true,
+                  initialValue: profileInfo?.email,
+                ),
+              ),
+              PhoneFormField(
+                params: GeneralFormFieldParams(
+                  form: form,
+                  controlName: _ControlNames.phone.name,
+                  label: tr(AppStrings.textField_mPhone),
+                  initialValue: profileInfo?.phone,
+                  keyboardType: const TextInputType.numberWithOptions(
+                    signed: true,
+                    decimal: true,
+                  ),
+                ),
+                buttonText: tr(AppStrings.button_confirm),
+                buttonOnPressed: _phoneConfirmationButtonHandler,
+              ),
+            ].map(_shimmerWrapping).toList(),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _shimmerWrapping(Widget widget) {
+    return ShimmerSwitchWidget(
+      isShimmerActive: controller.isLoadingProcess.isTrue,
+      shimmer: const Column(
+        children: [
+          SizedBox(height: spacing24),
+          ShimmerTextField(),
+        ],
+      ),
+      child: widget,
+    );
+  }
+
+  Future<void> _phoneConfirmationButtonHandler() async {
+    final pNumber = form.control(_ControlNames.phone.name).value as String;
+    Get.put(PhoneConfirmController(BonusesApi(), '1', phoneNumber: pNumber));
+
+    await GoRouter.of(context)
+        .pushNamed<bool>(AppRouteNames.phoneConfirm)
+        .then((value) {
+      if (value ?? false) controller.updateProfileInfo();
     });
-  }
 
-  // TODO: ????
-  void _unlockPhoneField() {
-    if (form.contains(_controlNames.phone.name)) {
-      form.control(_controlNames.phone.name).markAsEnabled();
-    }
-  }
-
-  void _lockPhoneField() {
-    if (form.contains(_controlNames.phone.name)) {
-      form.control(_controlNames.phone.name).markAsDisabled();
-    }
+    await Get.delete<PhoneConfirmController>();
   }
 }

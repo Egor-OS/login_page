@@ -11,7 +11,7 @@ class CancelButton extends StatelessWidget {
 
   bool _checkEmptyAllField() {
     for (final control in form.controls.values) {
-      if (control.checkEmpty()) return true;
+      if (control.checkNonEmpty()) return true;
     }
     return false;
   }

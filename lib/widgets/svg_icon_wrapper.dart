@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
-
-// TODO: 
+// TODO:
 class SvgIconWrapper extends StatelessWidget {
   const SvgIconWrapper(this.iconAsset, {super.key});
 

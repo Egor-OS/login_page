@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
@@ -29,11 +28,13 @@ class OptionFormField extends StatefulWidget {
 }
 
 class _OptionFormFieldState extends State<OptionFormField> {
-  // late GeneralFormFieldParams params;
+  //
+  bool _isOpened = false;
+  //
+  GeneralFormFieldParams get params => widget.params;
 
   @override
   void initState() {
-    // params = widget.params;
     params
       ..decoration = buildDecoration
       ..onTap = showSelectOptionModalSheet(context)
@@ -47,10 +48,6 @@ class _OptionFormFieldState extends State<OptionFormField> {
     return CustomFormField(params: params);
   }
 
-  bool _isOpened = false;
-
-  GeneralFormFieldParams get params => widget.params;
-
   InputDecoration buildDecoration(BuildContext context) {
     return InputDecoration(
       hintText: params.hint ?? params.controlName,
@@ -58,7 +55,7 @@ class _OptionFormFieldState extends State<OptionFormField> {
           ? context.theme.inputDecorationTheme.focusedBorder
           : CustomInputBorder(
               borderSide: BorderSide(
-                color: params.form.control(params.controlName).checkEmpty()
+                color: params.form.control(params.controlName).checkNonEmpty()
                     ? Theme.of(context).colorScheme.white
                     : Theme.of(context).colorScheme.white.withOpacity(0.4),
               ),
@@ -96,12 +93,6 @@ Future<int?> _showSelectOptionModalSheet(
   return showCustomModalBottomSheet<int?>(
     context: context,
     isScrollControlled: true,
-    trailing: TextButton(
-      onPressed: () {
-        GoRouter.of(context).pop();
-      },
-      child: Text(tr(AppStrings.button_close)),
-    ),
     title: Text(title ?? ''),
     child: SelectionListWidget(
       options: options,

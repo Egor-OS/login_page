@@ -19,14 +19,6 @@ class MainBanner extends StatefulWidget {
 }
 
 class _MainBannerState extends State<MainBanner> {
-  // late final ThemeData _appTheme;
-
-  @override
-  void initState() {
-    // _appTheme = _appTheme = Theme.of(context);
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(

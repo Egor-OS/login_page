@@ -12,6 +12,5 @@ abstract class AppRouteNames {
   static const String addAddress = 'add_address';
   static const String editAddress = 'edit_address';
   static const String phoneConfirm = 'phoneConfirm';
-  
-
+  static const String bonuses = 'bonuses';
 }

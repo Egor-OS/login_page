@@ -42,6 +42,7 @@ class ProfileController extends GetxController {
   Future<void> updateProfileInfo() async {
     isLoadingProcess.value = true;
     isLoadingFailed.value = false;
+    update();
     try {
       profileInfo.value = await _bonusesApi?.apiGetRequests.getProfileInfo(
         userId: userId,

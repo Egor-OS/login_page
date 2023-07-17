@@ -70,6 +70,10 @@ abstract class AppIcons {
 
   static const String deleteIcon = 'assets/icons/delete.svg';
 
+  static const String smallBannerFigure =
+      'assets/images/small_banner_figure.svg';
+  static const String smallBannerFigure2 =
+      'assets/images/small_banner_figure2.svg';
 
-
+  static const String calendar = 'assets/icons/calendar.svg';
 }

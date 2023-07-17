@@ -24,7 +24,7 @@ class ProductInfoModalSheet extends StatelessWidget {
         children: [
           const SizedBox(height: spacing16),
           Expanded(
-            child: RemoteImage(
+            child: CachedImage(
               imageUrl: product.imageUrl,
             ),
           ),

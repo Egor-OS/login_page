@@ -34,7 +34,7 @@ class ProductCardImage extends StatelessWidget {
             innerPadding: innerPadding,
             backgroundColor: cardBackgroundColor,
             borderRadius: borderRadius8,
-            child: RemoteImage(
+            child: CachedImage(
               imageUrl: imageUrl,
             ),
           ),

@@ -42,16 +42,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     ]);
   }
 
-  Widget buildLogOutButton() {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: padding16, top: padding32),
-      child: LogOutButtonWidget(
-        text: tr(AppStrings.button_logout),
-        onPressed: () async => authController.signOut(),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,5 +71,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   void dispose() {
     Get.delete<ProfileController>();
     super.dispose();
+  }
+
+  Widget buildLogOutButton() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: padding16, top: padding32),
+      child: LogOutButtonWidget(
+        text: tr(AppStrings.button_logout),
+        onPressed: () async => authController.signOut(),
+      ),
+    );
   }
 }

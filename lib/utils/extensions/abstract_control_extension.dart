@@ -1,7 +1,7 @@
 import 'package:reactive_forms/reactive_forms.dart';
 
 extension AbstractControlExtension on AbstractControl<dynamic> {
-  bool checkEmpty() {
+  bool checkNonEmpty() {
     if (value == null) {
       return false;
     } else if (value is String) {

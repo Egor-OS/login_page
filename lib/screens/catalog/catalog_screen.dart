@@ -213,12 +213,6 @@ class CatalogScreenView extends StatelessWidget {
   ) async {
     return showCustomModalBottomSheet<String?>(
       context: context,
-      trailing: TextButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
-        child: Text(tr(AppStrings.button_close)),
-      ),
       title: Text(tr(AppStrings.bSheetTitle_size)),
       child: Column(
         children: [

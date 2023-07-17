@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:reactive_forms_lbc/reactive_forms_lbc.dart';
 import 'package:training_and_testing/constants/constants.dart';
@@ -25,18 +24,20 @@ class _CustomFormFieldState extends State<CustomFormField> {
   @override
   void initState() {
     params = widget.params;
-    params.form.addAll({
-      params.controlName: FormControl<String>(
-        validators: params.validators ?? [],
-        disabled: params.disabled,
-      )
-    });
+    if (!params.form.controls.containsKey(params.controlName)) {
+      params.form.addAll({
+        params.controlName: FormControl<String>(
+          validators: params.validators ?? [],
+          disabled: params.disabled,
+          value: params.initialValue,
+        )
+      });
+    }
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    params.form.control(params.controlName).value = widget.params.initialValue;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: padding16),
       child: ReactiveFormConsumer(
@@ -48,7 +49,7 @@ class _CustomFormFieldState extends State<CustomFormField> {
                 maxLength: params.maxLength,
                 textAlign: params.textAlign,
                 showErrors: (control) =>
-                    control.checkEmpty() && !control.hasFocus,
+                    control.checkNonEmpty() && !control.hasFocus,
                 inputFormatters: [...?params.formatters],
                 formControlName: params.controlName,
                 maxLines: params.maxLines,
@@ -79,7 +80,7 @@ class _CustomFormFieldState extends State<CustomFormField> {
       counterText: '',
       enabledBorder: CustomInputBorder(
         borderSide: BorderSide(
-          color: params.form.control(params.controlName).checkEmpty()
+          color: params.form.control(params.controlName).checkNonEmpty()
               ? Theme.of(context).colorScheme.white
               : Theme.of(context).colorScheme.white.withOpacity(0.4),
         ),

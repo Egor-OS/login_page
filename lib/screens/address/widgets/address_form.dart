@@ -8,10 +8,9 @@ import 'package:training_and_testing/models/address_model.dart';
 import 'package:training_and_testing/utils/utils.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
-
 /// WARN! : names must match the model fields [AddressModel]
-/// 
-enum _ControlNames{ name, country, city, address, postcode}
+///
+enum _ControlNames { name, country, city, address, postcode }
 
 class AddressForm extends StatelessWidget {
   const AddressForm(this.form, this.controller, {super.key});
@@ -27,7 +26,7 @@ class AddressForm extends StatelessWidget {
       formGroup: form,
       child: ListView(
         children: [
-          // 
+          //
           BasicFormField(
             params: GeneralFormFieldParams(
               form: form,
@@ -86,7 +85,7 @@ class AddressForm extends StatelessWidget {
           // if the country field is empty/not empty
           ReactiveFormControlValueListener<String>(
             listener: (context, control) {
-              !control.checkEmpty()
+              !control.checkNonEmpty()
                   ? form.control(_ControlNames.city.name).markAsDisabled()
                   : form.control(_ControlNames.city.name).markAsEnabled();
               if (control.value != address?.country) {
@@ -102,7 +101,7 @@ class AddressForm extends StatelessWidget {
 
   // ban on the use of used names.
   Map<String, dynamic>? nameValidate(AbstractControl<dynamic> control) {
-    final error = <String, dynamic>{tr(AppStrings.validator_usedName) : true};
+    final error = <String, dynamic>{tr(AppStrings.validator_usedName): true};
 
     final unavailableNames = controller.setAddrNames..remove(address?.name);
 

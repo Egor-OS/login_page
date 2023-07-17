@@ -15,14 +15,18 @@ abstract class HomeScreenSized {
   static const double lableLineMaxWidth = 150;
 }
 
-abstract class NotificationsScreenSized{
+abstract class NotificationsScreenSized {
   // [QuickFilterTabs] height
   static const double quickFilterTabsHeight = 36;
 }
 
-abstract class GeneralAppSized{
+abstract class GeneralAppSized {
   // [CustomSwitch] sized
   static const double switchHeight = 24;
   static const double switchWidth = 42;
+}
 
+abstract class BonusesScreenSized {
+  // [BonusesScreenBanner] card height
+  static const double sliderCardHeight = 92;
 }

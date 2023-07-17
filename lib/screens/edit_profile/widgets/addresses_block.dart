@@ -55,18 +55,28 @@ class _AddressesBlockState extends State<AddressesBlock> {
       );
 
   Widget body(BuildContext context, List<AddressModel> addresses) =>
-      SegmentedButtonWidget(
-        backgroundColor: Theme.of(context).colorScheme.grey70,
-        itemBackgroundColor: Theme.of(context).colorScheme.grey90,
-        children: [
-          ...addresses.map(
-            (address) => SegmentedButtonItem.chevron(
-              title: address.name,
-              onTap: _onTapEdit(context, address),
+      _shimmerWrapping(
+        SegmentedButtonWidget(
+          backgroundColor: Theme.of(context).colorScheme.grey70,
+          itemBackgroundColor: Theme.of(context).colorScheme.grey90,
+          children: [
+            ...addresses.map(
+              (address) => SegmentedButtonItem.chevron(
+                title: address.name,
+                onTap: _onTapEdit(context, address),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       );
+
+  Widget _shimmerWrapping(Widget child) {
+    return ShimmerSwitchWidget(
+      isShimmerActive: widget.controller.isLoadingProcess.isTrue,
+      shimmer: const ShimmerSegmentedButton(2),
+      child: child,
+    );
+  }
 
   Future<void> Function()? _onTapAdd(BuildContext context) {
     if (widget.controller.isActionLock) return null;
@@ -131,10 +141,6 @@ class _AddressesBlockState extends State<AddressesBlock> {
     showCustomModalBottomSheet<void>(
       isScrollControlled: true,
       context: context,
-      trailing: TextButton(
-        onPressed: () => GoRouter.of(context).pop(),
-        child: Text(tr(AppStrings.button_close)),
-      ),
       child: const _NewAddedAddressMessage(),
     );
   }

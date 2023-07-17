@@ -23,7 +23,7 @@ class _BasicFormFieldState extends State<BasicFormField> {
 
   @override
   Widget build(BuildContext context) {
-    params.initialValue = widget.params.initialValue;
+    // params.initialValue = widget.params.initialValue;
     return CustomFormField(params: params);
   }
 

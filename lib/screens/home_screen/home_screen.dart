@@ -2,9 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:go_router/go_router.dart';
 import 'package:training_and_testing/api/bonuses_api.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
+import 'package:training_and_testing/router/router.dart';
 import 'package:training_and_testing/screens/home_screen/widgets/widgets.dart';
 import 'package:training_and_testing/widgets/future_widget.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
@@ -38,7 +40,7 @@ class HomeScreen extends StatelessWidget {
               MainBanner(homeScreenController: homeScreenController),
 
               // get bonuses button
-              _buildGetBonusesButton(),
+              _buildGetBonusesButton(context),
 
               // get bonuses banner
               _buildGetBonusesBunner(context),
@@ -115,11 +117,11 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildGetBonusesButton() {
+  Widget _buildGetBonusesButton(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: padding16),
       child: BrandButton(
-        onPressed: () {},
+        onPressed: () => GoRouter.of(context).pushNamed(AppRouteNames.bonuses),
         size: ButtonSize.large,
         child: Text(AppStrings.button_getBonuses.tr()),
       ),
