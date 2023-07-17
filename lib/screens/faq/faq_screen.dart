@@ -26,7 +26,7 @@ class _FaqScreenState extends State<FaqScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(tr(AppStrings.appBar_faq)),
+        title: Text(tr(AppStrings.screen_faq_appBar)),
       ),
       body: Obx(() {
         final listFAQ = controller.faqData.value?.listFAQ;

@@ -30,12 +30,11 @@ class RemoveAddressButton extends StatelessWidget {
     );
   }
 
-  // TODO: locale
   Widget _confirmationBottomSheet(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          'Are you sure you want to delete the address?',
+        Text(
+          tr(AppStrings.screen_address_confirmDelMes),
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: spacing24),
@@ -45,7 +44,7 @@ class RemoveAddressButton extends StatelessWidget {
           child: BrandButton(
             onPressed: () => {onPressed?.call(), GoRouter.of(context).pop()},
             type: ButtonType.secondary,
-            child: const Text('Delete'),
+            child: Text(tr(AppStrings.button_del)),
           ),
         ),
         const SizedBox(height: spacing16),
@@ -53,7 +52,7 @@ class RemoveAddressButton extends StatelessWidget {
           width: double.infinity,
           child: BrandButton(
             onPressed: () => GoRouter.of(context).pop(),
-            child: const Text('Cancel'),
+            child: Text(tr(AppStrings.button_cancel)),
           ),
         ),
       ],

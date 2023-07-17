@@ -21,11 +21,15 @@ class NoNotificationMessageWidget extends StatelessWidget {
               ),
               const SizedBox(height: padding12),
               Text(
-                AppStrings.noNotifMes_title1.tr().toUpperCase(),
+                AppStrings.screen_notifications_noNotifMes_title1
+                    .tr()
+                    .toUpperCase(),
                 style: Theme.of(context).textTheme.hero,
               ),
               Text(
-                AppStrings.noNotifMes_title2.tr().toUpperCase(),
+                AppStrings.screen_notifications_noNotifMes_title2
+                    .tr()
+                    .toUpperCase(),
                 style: Theme.of(context)
                     .textTheme
                     .hero

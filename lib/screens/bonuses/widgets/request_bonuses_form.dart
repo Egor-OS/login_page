@@ -36,13 +36,14 @@ class _RequestBonusesFormWidgetState extends State<RequestBonusesFormWidget> {
 
   /// Hint for the category selection field
   ///
-  final hintCategory = 'Category';
+  // TODO: locale
+  final hintCategory = tr(AppStrings.textField_category);
 
   @override
   void initState() {
     mapCategories = {
-      'Speaker at the conference': _speakerFields(form),
-      'Article author': _writerFields(form),
+      tr(AppStrings.screen_bonuses_categories_speaker): _speakerFields(form),
+      tr(AppStrings.screen_bonuses_categories_writer): _writerFields(form),
     };
     super.initState();
   }
@@ -118,6 +119,7 @@ class _RequestBonusesFormWidgetState extends State<RequestBonusesFormWidget> {
     _requestResultMessage(res);
   }
 
+  // TODO:
   void _requestResultMessage(bool res) {
     res
         ? SnackBarNotification('Succ', type: SnackBarType.positive)
@@ -133,9 +135,9 @@ class _RequestBonusesFormWidgetState extends State<RequestBonusesFormWidget> {
 // Bonus request forms for article authors.
 //
 enum _WriterControls {
-  resource('Resource'),
-  link('Link'),
-  info('Info');
+  resource(AppStrings.textField_resource),
+  link(AppStrings.textField_link),
+  info(AppStrings.textField_info);
 
   const _WriterControls(this.lable);
 
@@ -152,7 +154,7 @@ Widget _writerFields(FormGroup form) {
         params: GeneralFormFieldParams(
           form: form,
           controlName: _WriterControls.resource.name,
-          label: _WriterControls.resource.lable,
+          label: tr(_WriterControls.resource.lable),
           validators: [Validators.required],
         ),
         key: UniqueKey(),
@@ -161,7 +163,7 @@ Widget _writerFields(FormGroup form) {
         params: GeneralFormFieldParams(
           form: form,
           controlName: _WriterControls.link.name,
-          label: _WriterControls.link.lable,
+          label: tr(_WriterControls.link.lable),
           validators: [Validators.required],
         ),
         key: UniqueKey(),
@@ -170,7 +172,7 @@ Widget _writerFields(FormGroup form) {
         params: GeneralFormFieldParams(
           form: form,
           controlName: _WriterControls.info.name,
-          label: _WriterControls.info.lable,
+          label: tr(_WriterControls.info.lable),
           validators: [Validators.required],
         ),
         key: UniqueKey(),
@@ -179,13 +181,13 @@ Widget _writerFields(FormGroup form) {
   );
 }
 
-// Conference Speaker Bonus Request Forms.
+// Conference speaker bonus request forms.
 //
 enum _SpeakerControls {
-  link('Link'),
-  date('Date'),
-  count('Count'),
-  info('Info');
+  link(AppStrings.textField_link),
+  date(AppStrings.textField_date),
+  count(AppStrings.textField_count),
+  info(AppStrings.textField_info);
 
   const _SpeakerControls(this.lable);
 
@@ -203,7 +205,7 @@ Widget _speakerFields(FormGroup form) {
         params: GeneralFormFieldParams(
           form: form,
           controlName: _SpeakerControls.link.name,
-          label: _SpeakerControls.link.lable,
+          label: tr(_SpeakerControls.link.lable),
           validators: [Validators.required],
         ),
         key: UniqueKey(),
@@ -212,7 +214,7 @@ Widget _speakerFields(FormGroup form) {
         generalParams: GeneralFormFieldParams(
           form: form,
           controlName: _SpeakerControls.date.name,
-          hint: _SpeakerControls.date.lable,
+          hint: tr(_SpeakerControls.date.lable),
         ),
         calendarParams: CalendarDatePickerParams(
           firstDate: DateTime.now(),
@@ -223,7 +225,7 @@ Widget _speakerFields(FormGroup form) {
         params: GeneralFormFieldParams(
           form: form,
           controlName: _SpeakerControls.count.name,
-          label: _SpeakerControls.count.lable,
+          label: tr(_SpeakerControls.count.lable),
           validators: [Validators.required],
           formatters: [FilteringTextInputFormatter.digitsOnly],
           keyboardType: TextInputType.number,
@@ -234,7 +236,7 @@ Widget _speakerFields(FormGroup form) {
         params: GeneralFormFieldParams(
           form: form,
           controlName: _SpeakerControls.info.name,
-          label: _SpeakerControls.info.lable,
+          label: tr(_SpeakerControls.info.lable),
           validators: [Validators.required],
         ),
         key: UniqueKey(),

@@ -33,14 +33,14 @@ class BonusBalance extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppStrings.bonusBalance.tr(),
+                  AppStrings.screen_main_bonusBalance.tr(),
                   style: appTheme.textTheme.h3,
                 ),
                 const SizedBox(height: spacing4),
                 Row(
                   children: [
                     Text(
-                      '${AppStrings.today.tr()} ',
+                      '${AppStrings.screen_main_today.tr()} ',
                       style: appTheme.textTheme.bodyS.light.light.copyWith(
                         color: Colors.white.withOpacity(0.5),
                       ),

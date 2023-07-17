@@ -31,7 +31,7 @@ class FilterPanelWidget extends StatelessWidget {
               isSelected: category == controller.filterCategory.value,
               child: Text(
                 mapCategories[category] ??
-                    tr(AppStrings.tab_notifications_allMessages),
+                    tr(AppStrings.screen_notifications_tab_allMessages),
               ),
             ),
           );

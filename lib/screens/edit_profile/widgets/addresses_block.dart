@@ -118,12 +118,10 @@ class _AddressesBlockState extends State<AddressesBlock> {
     String? message;
     switch (operation) {
       case AddressOperations.del:
-        // TODO: locale
-        message = 'Address has been successfully deleted';
+        message = tr(AppStrings.snackBarMes_edit_profile_succDel);
         break;
       case AddressOperations.edit:
-        // TODO: locale
-        message = 'Address has been successfully changed';
+        message = tr(AppStrings.snackBarMes_edit_profile_succCh);
         break;
       case AddressOperations.add:
         _showSuccessAddMessage(context);
@@ -160,16 +158,16 @@ class _NewAddedAddressMessage extends StatelessWidget {
         ),
         const SizedBox(height: spacing12),
         Text(
-          tr(AppStrings.addedAdrMes_title1).toUpperCase(),
+          tr(AppStrings.screen_edit_profile_addedAdrMes_title1).toUpperCase(),
           style: appTheme.textTheme.hero.heavy,
         ),
         Text(
-          tr(AppStrings.addedAdrMes_title2).toUpperCase(),
+          tr(AppStrings.screen_edit_profile_addedAdrMes_title2).toUpperCase(),
           style: appTheme.textTheme.hero.heavy
               .copyWith(color: appTheme.colorScheme.blue50),
         ),
         Text(
-          tr(AppStrings.addedAdrMes_text),
+          tr(AppStrings.screen_edit_profile_addedAdrMes_text),
           style: appTheme.textTheme.bodyM.light,
         ).paddingSymmetric(vertical: padding12),
         SizedBox(

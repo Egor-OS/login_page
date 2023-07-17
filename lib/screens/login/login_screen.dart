@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/auth_controller.dart';
-import 'package:training_and_testing/screens/login_screen/widgets/login_button_widget.dart';
-import 'package:training_and_testing/screens/login_screen/widgets/preview_button_widget.dart';
+import 'package:training_and_testing/screens/login/widgets/login_button_widget.dart';
+import 'package:training_and_testing/screens/login/widgets/preview_button_widget.dart';
 import 'package:training_and_testing/theme/app_colors.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
@@ -49,7 +49,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 const SizedBox(height: spacing80),
                 // Text
                 Text(
-                  AppStrings.welcomMes.tr().toUpperCase(),
+                  AppStrings.screen_login_welcomMes.tr().toUpperCase(),
                   style: titleTextStyle,
                 ),
                 // Login button

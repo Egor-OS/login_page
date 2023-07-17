@@ -7,7 +7,7 @@ import 'package:training_and_testing/api/bonuses_api.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
 import 'package:training_and_testing/router/router.dart';
-import 'package:training_and_testing/screens/home_screen/widgets/widgets.dart';
+import 'package:training_and_testing/screens/home/widgets/widgets.dart';
 import 'package:training_and_testing/widgets/future_widget.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
               BonusesOptionButton(
                 title: '*',
                 onPressed: () => SnackBarNotification(
-                  AppStrings.snackBarMes_authFiled.tr(),
+                  AppStrings.snackBarMes_login_authFiled.tr(),
                   type: SnackBarType.positive,
                 ).show(context),
               ),
@@ -101,13 +101,13 @@ class HomeScreen extends StatelessWidget {
 
               BonusesOptionButton(
                 iconPath: AppIcons.writeIcon,
-                title: AppStrings.banner_main_bonus_btn1.tr(),
+                title: AppStrings.screen_main_banner_bonus_btn1.tr(),
                 onPressed: () {},
               ),
               const SizedBox(width: spacing8),
               BonusesOptionButton(
                 iconPath: AppIcons.speakerIcon,
-                title: AppStrings.banner_main_bonus_btn2.tr(),
+                title: AppStrings.screen_main_banner_bonus_btn2.tr(),
                 onPressed: () {},
               ),
             ],

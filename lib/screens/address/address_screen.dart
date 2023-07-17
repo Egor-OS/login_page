@@ -15,14 +15,14 @@ enum AddressOperations { del, edit, add }
 
 class AddressScreen extends StatefulWidget {
   const AddressScreen({
-    this.title = AppStrings.appBar_newAddress,
+    this.title = AppStrings.screen_address_appBar_new,
     this.type = AddressScrType.add,
     super.key,
   });
 
   factory AddressScreen.edit() {
     return const AddressScreen(
-      title: AppStrings.appBar_editAddress,
+      title: AppStrings.screen_address_appBar_edit,
       type: AddressScrType.edit,
     );
   }
@@ -139,17 +139,18 @@ class _AddressScreenState extends State<AddressScreen> {
     String? message;
     switch (operation) {
       case AddressOperations.del:
-        // TODO: locale
-        message = 'The removal operation was not performed.';
+        message = tr(AppStrings.snackBarMes_address_notRemove);
         break;
       case AddressOperations.edit:
-        message = 'The change operation is not performed.';
+        message = tr(AppStrings.snackBarMes_address_notChenge);
         break;
       case AddressOperations.add:
-        message = 'Address has not been added.';
+        message = tr(AppStrings.snackBarMes_address_notAdd);
         break;
     }
-    SnackBarNotification('$message Try again...').show(context);
+    SnackBarNotification(
+      '$message ${tr(AppStrings.snackBarMes_address_tryAgain)}',
+    ).show(context);
   }
 
   // bottom bar padding

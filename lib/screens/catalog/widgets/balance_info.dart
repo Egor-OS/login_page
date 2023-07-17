@@ -20,7 +20,7 @@ class BalanceInfo extends StatelessWidget {
     return Row(
       children: [
         Text(
-          '${tr(AppStrings.urBalance)}:',
+          '${tr(AppStrings.screen_catalog_urBalance)}:',
           style: theme.textTheme.h3.medium.copyWith(
             color: theme.colorScheme.backgroundInverse.withOpacity(0.4),
           ),

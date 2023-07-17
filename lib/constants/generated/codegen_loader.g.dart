@@ -15,16 +15,27 @@ class CodegenLoader extends AssetLoader{
   }
 
   static const Map<String,dynamic> en = {
-  "duplicate": {
-    "allAchieves": "All achieves",
-    "catalog": "Catalog",
-    "notifications": "Notifications",
-    "newAddress": "New address",
-    "order": "Order",
-    "date": "Date",
-    "complain": "Complain",
-    "feedback": "Feedback",
-    "email": "E-mail"
+  "badge": {
+    "new": "New",
+    "qty": "QTY:",
+    "size": "SIZE:"
+  },
+  "blockTitle": {
+    "achieves": "Achieves",
+    "activeOrdrs": "Active orders",
+    "lastOperat": "Last operations",
+    "myAdresses": "My adresses",
+    "notifications": "@:duplicate.notifications"
+  },
+  "bSheetTitle": {
+    "category": "Category",
+    "complain": "@:duplicate.complain",
+    "date": "@:duplicate.date",
+    "quantity": "Quantity",
+    "shipAdr": "Shipping address",
+    "shipType": "Shipping type",
+    "size": "Size",
+    "topic": "Topic"
   },
   "button": {
     "addAddress": "Add new address",
@@ -37,6 +48,7 @@ class CodegenLoader extends AssetLoader{
     "close": "Close",
     "complain": "@:duplicate.complain",
     "confirm": "Confirm",
+    "del": "Delete",
     "delAll": "Delete all",
     "delFromCart": "Delete from cart",
     "edit": "Edit",
@@ -52,11 +64,11 @@ class CodegenLoader extends AssetLoader{
     "loginGoogle": "Login with Google",
     "logout": "Log out of your account",
     "newAddress": "@:duplicate.newAddress",
-    "placeNewOrd": "Place a new order",
+    "placeNewOrd": "Place new order",
     "placeOrder": "Place order",
     "push": "Push",
-    "repeat": "Repeat",
     "remove": "Remove",
+    "repeat": "Repeat",
     "save": "Save",
     "send": "Send",
     "showRes": "Show results",
@@ -64,22 +76,31 @@ class CodegenLoader extends AssetLoader{
     "soon": "Soon",
     "urComplains": "Your complains"
   },
-  "appBar": {
-    "allAchieves": "@:duplicate.allAchieves",
-    "bonuses": "Bonuses",
-    "catalog": "@:duplicate.catalog",
-    "catalogFltr": "Catalog filters",
-    "confirmPhone": "Confirm new phone",
-    "editAddress": "Edit address",
-    "editProfile": "Edit profile",
-    "faq": "FAQ",
-    "feedback": "@:duplicate.feedback",
-    "newAddress": "@:duplicate.newAddress",
-    "notifications": "@:duplicate.notifications",
-    "operations": "Operations",
-    "order": "@:duplicate.order",
-    "orders": "Orders",
-    "shipDetails": "Shipping details"
+  "duplicate": {
+    "allAchieves": "All achieves",
+    "banner": {
+      "toSpend": "To spend bonuses",
+      "selectSome": "select something",
+      "dontKnow": "Don't know",
+      "howToGet": "how to get bonuses?"
+    },
+    "bonusBalance": "Bonus balance",
+    "catalog": "Catalog",
+    "complain": "Complain",
+    "date": "Date",
+    "email": "E-mail",
+    "feedback": "Feedback",
+    "newAddress": "New address",
+    "notifications": "Notifications",
+    "order": "Order"
+  },
+  "enums": {
+    "OrderStatus": {
+      "canceled": "Canceled",
+      "delivered": "Delivered",
+      "waitingForDelivery": "Waiting For Delivery",
+      "unknown": "Unknown"
+    }
   },
   "navBar": {
     "basket": "Basket",
@@ -87,94 +108,167 @@ class CodegenLoader extends AssetLoader{
     "main": "Main",
     "profile": "Profile"
   },
-  "banner": {
-    "duplicate": {
-      "toSpend": "To spend bonuses",
-      "selectSome": "select something",
-      "dontKnow": "Don't know",
-      "howToGet": "how to get bonuses?"
-    },
-    "main": {
-      "text": "You have a lot of bonuses. You can order something for yourself",
-      "first": {
-        "title1": "To buy something",
-        "title2": "you need to get bonuses",
-        "text": "@:banner.main.text"
-      },
-      "second": {
-        "title1": "@:banner.duplicate.toSpend",
-        "title2": "@:banner.duplicate.selectSome",
-        "text": "@:banner.main.text"
-      },
-      "bonus": {
-        "title1": "To get more bonuses, ",
-        "title2": "you can do",
-        "btn1": "Write an article",
-        "btn2": "To speak at the conference"
+  "screen": {
+    "achieves": {
+      "appBar": "@:duplicate.allAchieves",
+      "banner": {
+        "text": "Find out how to get more achieves by getting bonuses"
       }
+    },
+    "address": {
+      "appBar": {
+        "new": "@:duplicate.newAddress",
+        "edit": "Edit address"
+      },
+      "confirmDelMes": "Are you sure you want to delete the address?"
     },
     "bonuses": {
-      "first": {
-        "title1": "@:banner.duplicate.dontKnow",
-        "title2": "@:banner.duplicate.howToGet"
+      "appBar": "Bonuses",
+      "categories": {
+        "speaker": "Speaker at the conference",
+        "writer": "Article author"
       },
-      "second": {
-        "title1": "@:banner.duplicate.toSpend",
-        "title2": "@:banner.duplicate.selectSome"
-      },
-      "bSheet": {
-        "title1": "Prove yourself",
-        "title2": "and get bonuses"
+      "title": "Request bonuses",
+      "banner": {
+        "first": {
+          "title1": "@:duplicate.banner.dontKnow",
+          "title2": "@:duplicate.banner.howToGet"
+        },
+        "second": {
+          "title1": "@:duplicate.banner.toSpend",
+          "title2": "@:duplicate.banner.selectSome"
+        },
+        "bSheet": {
+          "title1": "Prove yourself",
+          "title2": "and get bonuses"
+        }
       }
     },
-    "profile": {
-      "title1": "@:banner.duplicate.dontKnow",
-      "title2": "@:banner.duplicate.howToGet"
+    "cart": {
+      "somethingWentWr": "Something went wrong",
+      "cartEmpty": {
+        "title1": "Your cart",
+        "title2": "is empty",
+        "text1": "You have ",
+        "text2": "bonus points. Spend them on items from the catalog"
+      }
     },
-    "orders": {
-      "text1": "You have ",
-      "text2": " bonuses. You can place a new order."
+    "catalog": {
+      "urBalance": "Your balance:"
     },
-    "allAchieves": {
-      "text": "Find out how to get more achieves by getting bonuses"
-    }
-  },
-  "tab": {
-    "operations": {
-      "all": "All operations",
-      "received": "Received bonuses",
-      "spent": "Spent bonuses"
+    "catalog_filter": {
+      "appBar": "Catalog filters"
     },
-    "complain": {
-      "notDeliv": "Not delivered",
-      "wrongPrd": "Wrong product",
-      "badPrint": "Bad printing",
-      "longDeliv": "Long delivery",
-      "poorQlt": "Poor quality"
+    "checkout": {
+      "appBar": "Shipping details"
+    },
+    "edit_profile": {
+      "appBar": "Edit profile",
+      "addedAdrMes": {
+        "title1": "new address",
+        "title2": "has been added",
+        "text": "You can place an order to this address"
+      }
+    },
+    "faq": {
+      "appBar": "FAQ"
+    },
+    "feedback": {
+      "appBar": "@:duplicate.feedback"
+    },
+    "login": {
+      "welcomMes": "Get bonuses and exchange them for branded products"
+    },
+    "main": {
+      "banner": {
+        "text": "You have a lot of bonuses. You can order something for yourself",
+        "first": {
+          "title1": "To buy something",
+          "title2": "you need to get bonuses",
+          "text": "@:screen.main.banner.text"
+        },
+        "second": {
+          "title1": "@:duplicate.banner.toSpend",
+          "title2": "@:duplicate.banner.selectSome",
+          "text": "@:screen.main.banner.text"
+        },
+        "bonus": {
+          "title1": "To get more bonuses, ",
+          "title2": "you can do",
+          "btn1": "Write an article",
+          "btn2": "To speak at the conference"
+        }
+      },
+      "today": "Today:",
+      "bonusBalance": "@:duplicate.bonusBalance"
     },
     "notifications": {
-      "allMessages": "All messages"
+      "appBar": "@:duplicate.notifications",
+      "tab": {
+        "allMessages": "All messages"
+      },
+      "noNotifMes": {
+        "title1": "You have",
+        "title2": "no messages"
+      }
+    },
+    "operations": {
+      "appBar": "Operations",
+      "tab": {
+        "all": "All operations",
+        "received": "Received bonuses",
+        "spent": "Spent bonuses"
+      }
+    },
+    "order": {
+      "appBar": "@:duplicate.order",
+      "tab": {
+        "notDeliv": "Not delivered",
+        "wrongPrd": "Wrong product",
+        "badPrint": "Bad printing",
+        "longDeliv": "Long delivery",
+        "poorQlt": "Poor quality"
+      }
+    },
+    "orders": {
+      "appBar": "Orders",
+      "banner": {
+        "text1": "You have ",
+        "text2": " bonuses. You can place a new order."
+      }
+    },
+    "phone_confirm": {
+      "appBar": "Confirm new phone",
+      "title": "Enter the code sent to the new number"
+    },
+    "profile": {
+      "banner": {
+        "title1": "@:duplicate.banner.dontKnow",
+        "title2": "@:duplicate.banner.howToGet"
+      },
+      "bonusBalance": "@:duplicate.bonusBalance"
     }
   },
-  "blockTitle": {
-    "achieves": "Achieves",
-    "activeOrdrs": "Active orders",
-    "lastOperat": "Last operations",
-    "myAdresses": "My adresses",
-    "notifications": "@:duplicate.notifications"
-  },
   "snackBarMes": {
-    "authSucces": "Authorization was successful",
-    "authFiled": "Authorization failed",
+    "address": {
+      "notRemove": "The removal operation was not completed.",
+      "notChenge": "The change operation has not been completed.",
+      "notAdd": "Address has not been added.",
+      "tryAgain": "Try again..."
+    },
+    "edit_profile": {
+      "succDel": "Address has been successfully deleted",
+      "succCh": "Address has been successfully changed"
+    },
+    "login": {
+      "authFiled": "Authorization failed",
+      "authSucces": "Authorization was successful"
+    },
     "notCompleted": "Sorry, the operation was not completed"
-  },
-  "badge": {
-    "new": "New",
-    "qty": "QTY:",
-    "size": "SIZE:"
   },
   "textField": {
     "address": "Address",
+    "category": "Category",
     "city": "City",
     "count": "Count",
     "country": "Country",
@@ -194,60 +288,33 @@ class CodegenLoader extends AssetLoader{
     "surname": "Surname",
     "urComment": "Your comment"
   },
-  "bSheetTitle": {
-    "category": "Category",
-    "complain": "@:duplicate.complain",
-    "date": "@:duplicate.date",
-    "quantity": "Quantity",
-    "shipAdr": "Shipping address",
-    "shipType": "Shipping type",
-    "size": "Size",
-    "topic": "Topic"
-  },
-  "enums": {
-    "OrderStatus": {
-      "canceled": "Canceled",
-      "delivered": "Delivered",
-      "waitingForDelivery": "Waiting For Delivery",
-      "unknown": "Unknown"
-    }
-  },
   "validator": {
-    "usedName": "Name already in use",
-    "invalidPhone": "Invalid phone number"
-  },
-  "noNotifMes": {
-    "title1": "You have",
-    "title2": "no messages"
-  },
-  "addedAdrMes": {
-    "title1": "new address",
-    "title2": "has been added",
-    "text": "You can place an order to this address"
-  },
-  "cartEmpty": {
-    "title1": "Your cart",
-    "title2": "is empty",
-    "text1": "You have ",
-    "text2": "bonus points. Spend them on items from the catalog"
-  },
-  "welcomMes": "Get bonuses and exchange them for branded products",
-  "today": "Today:",
-  "bonusBalance": "Bonus balance",
-  "urBalance": "Your balance:",
-  "somethingWentWr": "Something went wrong"
+    "invalidPhone": "Invalid phone number",
+    "usedName": "Name already in use"
+  }
 };
 static const Map<String,dynamic> ru = {
-  "duplicate": {
-    "allAchieves": "All achieves",
-    "catalog": "Catalog",
-    "notifications": "Notifications",
-    "newAddress": "New address",
-    "order": "Order",
-    "date": "Date",
-    "complain": "Complain",
-    "feedback": "Feedback",
-    "email": "E-mail"
+  "badge": {
+    "new": "New",
+    "qty": "QTY:",
+    "size": "SIZE:"
+  },
+  "blockTitle": {
+    "achieves": "Achieves",
+    "activeOrdrs": "Active orders",
+    "lastOperat": "Last operations",
+    "myAdresses": "My adresses",
+    "notifications": "@:duplicate.notifications"
+  },
+  "bSheetTitle": {
+    "category": "Category",
+    "complain": "@:duplicate.complain",
+    "date": "@:duplicate.date",
+    "quantity": "Quantity",
+    "shipAdr": "Shipping address",
+    "shipType": "Shipping type",
+    "size": "Size",
+    "topic": "Topic"
   },
   "button": {
     "addAddress": "Add new address",
@@ -260,6 +327,7 @@ static const Map<String,dynamic> ru = {
     "close": "Close",
     "complain": "@:duplicate.complain",
     "confirm": "Confirm",
+    "del": "Delete",
     "delAll": "Delete all",
     "delFromCart": "Delete from cart",
     "edit": "Edit",
@@ -275,11 +343,11 @@ static const Map<String,dynamic> ru = {
     "loginGoogle": "Login with Google",
     "logout": "Log out of your account",
     "newAddress": "@:duplicate.newAddress",
-    "placeNewOrd": "Place a new order",
+    "placeNewOrd": "Place new order",
     "placeOrder": "Place order",
     "push": "Push",
-    "repeat": "Repeat",
     "remove": "Remove",
+    "repeat": "Repeat",
     "save": "Save",
     "send": "Send",
     "showRes": "Show results",
@@ -287,22 +355,31 @@ static const Map<String,dynamic> ru = {
     "soon": "Soon",
     "urComplains": "Your complains"
   },
-  "appBar": {
-    "allAchieves": "@:duplicate.allAchieves",
-    "bonuses": "Bonuses",
-    "catalog": "@:duplicate.catalog",
-    "catalogFltr": "Catalog filters",
-    "confirmPhone": "Confirm new phone",
-    "editAddress": "Edit address",
-    "editProfile": "Edit profile",
-    "faq": "FAQ",
-    "feedback": "@:duplicate.feedback",
-    "newAddress": "@:duplicate.newAddress",
-    "notifications": "@:duplicate.notifications",
-    "operations": "Operations",
-    "order": "@:duplicate.order",
-    "orders": "Orders",
-    "shipDetails": "Shipping details"
+  "duplicate": {
+    "allAchieves": "All achieves",
+    "banner": {
+      "toSpend": "To spend bonuses",
+      "selectSome": "select something",
+      "dontKnow": "Don't know",
+      "howToGet": "how to get bonuses?"
+    },
+    "bonusBalance": "Bonus balance",
+    "catalog": "Catalog",
+    "complain": "Complain",
+    "date": "Date",
+    "email": "E-mail",
+    "feedback": "Feedback",
+    "newAddress": "New address",
+    "notifications": "Notifications",
+    "order": "Order"
+  },
+  "enums": {
+    "OrderStatus": {
+      "canceled": "Canceled",
+      "delivered": "Delivered",
+      "waitingForDelivery": "Waiting For Delivery",
+      "unknown": "Unknown"
+    }
   },
   "navBar": {
     "basket": "Basket",
@@ -310,94 +387,167 @@ static const Map<String,dynamic> ru = {
     "main": "Main",
     "profile": "Profile"
   },
-  "banner": {
-    "duplicate": {
-      "toSpend": "To spend bonuses",
-      "selectSome": "select something",
-      "dontKnow": "Don't know",
-      "howToGet": "how to get bonuses?"
-    },
-    "main": {
-      "text": "You have a lot of bonuses. You can order something for yourself",
-      "first": {
-        "title1": "To buy something",
-        "title2": "you need to get bonuses",
-        "text": "@:banner.main.text"
-      },
-      "second": {
-        "title1": "@:banner.duplicate.toSpend",
-        "title2": "@:banner.duplicate.selectSome",
-        "text": "@:banner.main.text"
-      },
-      "bonus": {
-        "title1": "To get more bonuses, ",
-        "title2": "you can do",
-        "btn1": "Write an article",
-        "btn2": "To speak at the conference"
+  "screen": {
+    "achieves": {
+      "appBar": "@:duplicate.allAchieves",
+      "banner": {
+        "text": "Find out how to get more achieves by getting bonuses"
       }
+    },
+    "address": {
+      "appBar": {
+        "new": "@:duplicate.newAddress",
+        "edit": "Edit address"
+      },
+      "confirmDelMes": "Are you sure you want to delete the address?"
     },
     "bonuses": {
-      "first": {
-        "title1": "@:banner.duplicate.dontKnow",
-        "title2": "@:banner.duplicate.howToGet"
+      "appBar": "Bonuses",
+      "categories": {
+        "speaker": "Speaker at the conference",
+        "writer": "Article author"
       },
-      "second": {
-        "title1": "@:banner.duplicate.toSpend",
-        "title2": "@:banner.duplicate.selectSome"
-      },
-      "bSheet": {
-        "title1": "Prove yourself",
-        "title2": "and get bonuses"
+      "title": "Request bonuses",
+      "banner": {
+        "first": {
+          "title1": "@:duplicate.banner.dontKnow",
+          "title2": "@:duplicate.banner.howToGet"
+        },
+        "second": {
+          "title1": "@:duplicate.banner.toSpend",
+          "title2": "@:duplicate.banner.selectSome"
+        },
+        "bSheet": {
+          "title1": "Prove yourself",
+          "title2": "and get bonuses"
+        }
       }
     },
-    "profile": {
-      "title1": "@:banner.duplicate.dontKnow",
-      "title2": "@:banner.duplicate.howToGet"
+    "cart": {
+      "somethingWentWr": "Something went wrong",
+      "cartEmpty": {
+        "title1": "Your cart",
+        "title2": "is empty",
+        "text1": "You have ",
+        "text2": "bonus points. Spend them on items from the catalog"
+      }
     },
-    "orders": {
-      "text1": "You have ",
-      "text2": " bonuses. You can place a new order."
+    "catalog": {
+      "urBalance": "Your balance:"
     },
-    "allAchieves": {
-      "text": "Find out how to get more achieves by getting bonuses"
-    }
-  },
-  "tab": {
-    "operations": {
-      "all": "All operations",
-      "received": "Received bonuses",
-      "spent": "Spent bonuses"
+    "catalog_filter": {
+      "appBar": "Catalog filters"
     },
-    "complain": {
-      "notDeliv": "Not delivered",
-      "wrongPrd": "Wrong product",
-      "badPrint": "Bad printing",
-      "longDeliv": "Long delivery",
-      "poorQlt": "Poor quality"
+    "checkout": {
+      "appBar": "Shipping details"
+    },
+    "edit_profile": {
+      "appBar": "Edit profile",
+      "addedAdrMes": {
+        "title1": "new address",
+        "title2": "has been added",
+        "text": "You can place an order to this address"
+      }
+    },
+    "faq": {
+      "appBar": "FAQ"
+    },
+    "feedback": {
+      "appBar": "@:duplicate.feedback"
+    },
+    "login": {
+      "welcomMes": "Get bonuses and exchange them for branded products"
+    },
+    "main": {
+      "banner": {
+        "text": "You have a lot of bonuses. You can order something for yourself",
+        "first": {
+          "title1": "To buy something",
+          "title2": "you need to get bonuses",
+          "text": "@:screen.main.banner.text"
+        },
+        "second": {
+          "title1": "@:duplicate.banner.toSpend",
+          "title2": "@:duplicate.banner.selectSome",
+          "text": "@:screen.main.banner.text"
+        },
+        "bonus": {
+          "title1": "To get more bonuses, ",
+          "title2": "you can do",
+          "btn1": "Write an article",
+          "btn2": "To speak at the conference"
+        }
+      },
+      "today": "Today:",
+      "bonusBalance": "@:duplicate.bonusBalance"
     },
     "notifications": {
-      "allMessages": "All messages"
+      "appBar": "@:duplicate.notifications",
+      "tab": {
+        "allMessages": "All messages"
+      },
+      "noNotifMes": {
+        "title1": "You have",
+        "title2": "no messages"
+      }
+    },
+    "operations": {
+      "appBar": "Operations",
+      "tab": {
+        "all": "All operations",
+        "received": "Received bonuses",
+        "spent": "Spent bonuses"
+      }
+    },
+    "order": {
+      "appBar": "@:duplicate.order",
+      "tab": {
+        "notDeliv": "Not delivered",
+        "wrongPrd": "Wrong product",
+        "badPrint": "Bad printing",
+        "longDeliv": "Long delivery",
+        "poorQlt": "Poor quality"
+      }
+    },
+    "orders": {
+      "appBar": "Orders",
+      "banner": {
+        "text1": "You have ",
+        "text2": " bonuses. You can place a new order."
+      }
+    },
+    "phone_confirm": {
+      "appBar": "Confirm new phone",
+      "title": "Enter the code sent to the new number"
+    },
+    "profile": {
+      "banner": {
+        "title1": "@:duplicate.banner.dontKnow",
+        "title2": "@:duplicate.banner.howToGet"
+      },
+      "bonusBalance": "@:duplicate.bonusBalance"
     }
   },
-  "blockTitle": {
-    "achieves": "Achieves",
-    "activeOrdrs": "Active orders",
-    "lastOperat": "Last operations",
-    "myAdresses": "My adresses",
-    "notifications": "@:duplicate.notifications"
-  },
   "snackBarMes": {
-    "authSucces": "Authorization was successful",
-    "authFiled": "Authorization failed",
+    "address": {
+      "notRemove": "The removal operation was not completed.",
+      "notChenge": "The change operation has not been completed.",
+      "notAdd": "Address has not been added.",
+      "tryAgain": "Try again..."
+    },
+    "edit_profile": {
+      "succDel": "Address has been successfully deleted",
+      "succCh": "Address has been successfully changed"
+    },
+    "login": {
+      "authFiled": "Authorization failed",
+      "authSucces": "Authorization was successful"
+    },
     "notCompleted": "Sorry, the operation was not completed"
-  },
-  "badge": {
-    "new": "New",
-    "qty": "QTY:",
-    "size": "SIZE:"
   },
   "textField": {
     "address": "Address",
+    "category": "Category",
     "city": "City",
     "count": "Count",
     "country": "Country",
@@ -417,48 +567,10 @@ static const Map<String,dynamic> ru = {
     "surname": "Surname",
     "urComment": "Your comment"
   },
-  "bSheetTitle": {
-    "category": "Category",
-    "complain": "@:duplicate.complain",
-    "date": "@:duplicate.date",
-    "quantity": "Quantity",
-    "shipAdr": "Shipping address",
-    "shipType": "Shipping type",
-    "size": "Size",
-    "topic": "Topic"
-  },
-  "enums": {
-    "OrderStatus": {
-      "canceled": "Canceled",
-      "delivered": "Delivered",
-      "waitingForDelivery": "Waiting For Delivery",
-      "unknown": "Unknown"
-    }
-  },
   "validator": {
-    "usedName": "Name already in use",
-    "invalidPhone": "Invalid phone number"
-  },
-  "noNotifMes": {
-    "title1": "You have",
-    "title2": "no messages"
-  },
-  "addedAdrMes": {
-    "title1": "new address",
-    "title2": "has been added",
-    "text": "You can place an order to this address"
-  },
-  "cartEmpty": {
-    "title1": "Your cart",
-    "title2": "is empty",
-    "text1": "You have ",
-    "text2": "bonus points. Spend them on items from the catalog"
-  },
-  "welcomMes": "Get bonuses and exchange them for branded products",
-  "today": "Today:",
-  "bonusBalance": "Bonus balance",
-  "urBalance": "Your balance:",
-  "somethingWentWr": "Something went wrong"
+    "invalidPhone": "Invalid phone number",
+    "usedName": "Name already in use"
+  }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "ru": ru};
 }

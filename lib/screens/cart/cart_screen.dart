@@ -45,7 +45,7 @@ class _CartScreenState extends State<CartScreen> {
         if (snapshot.hasError) {
           return Scaffold(
             body: Center(
-              child: Text(tr(AppStrings.somethingWentWr)),
+              child: Text(tr(AppStrings.screen_cart_somethingWentWr)),
             ),
           );
         }

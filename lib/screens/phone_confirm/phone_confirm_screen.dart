@@ -29,7 +29,7 @@ class _PhoneConfirmScreenState extends State<PhoneConfirmScreen> {
       appBar: AppBarWithProgress(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(tr(AppStrings.appBar_confirmPhone)),
+          title: Text(tr(AppStrings.screen_phone_confirm_appBar)),
         ),
         listener: controller.isSendingProcess,
       ),
@@ -38,9 +38,8 @@ class _PhoneConfirmScreenState extends State<PhoneConfirmScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // TODO: locale
             Text(
-              tr('Enter the code sent to the new number'),
+              tr(AppStrings.screen_phone_confirm_title),
               style: Theme.of(context).textTheme.h2,
               textAlign: TextAlign.center,
             ),

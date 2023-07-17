@@ -42,13 +42,13 @@ class _LoginButtonWidgetState extends State<LoginButtonWidget> {
         // If authorization is successful
         if (widget.authController.isLoggedIn.value)
           SnackBarNotification(
-            AppStrings.snackBarMes_authSucces.tr(),
+            AppStrings.snackBarMes_login_authSucces.tr(),
             type: SnackBarType.positive,
           ).show(context)
         // If authorization is unsuccessful
         else
           SnackBarNotification(
-            AppStrings.snackBarMes_authFiled.tr(),
+            AppStrings.snackBarMes_login_authFiled.tr(),
             type: SnackBarType.negative,
           ).show(context),
         widget.authController.inAuthProcess.value = false,

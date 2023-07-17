@@ -28,11 +28,12 @@ class CartEmptyScreen extends StatelessWidget {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            text: tr(AppStrings.cartEmpty_title1).toUpperCase(),
+            text: tr(AppStrings.screen_cart_cartEmpty_title1).toUpperCase(),
             style: theme.textTheme.hero,
             children: [
               TextSpan(
-                text: '\n${tr(AppStrings.cartEmpty_title2).toUpperCase()}',
+                text: '\n${tr(AppStrings.screen_cart_cartEmpty_title2)}'
+                    .toUpperCase(),
                 style: theme.textTheme.hero.copyWith(
                   color: theme.colorScheme.blue50,
                 ),
@@ -68,9 +69,9 @@ class CartEmptyScreen extends StatelessWidget {
 
   String get _buildInviteToSpendText {
     return '${tr(
-      AppStrings.cartEmpty_text1,
+      AppStrings.screen_cart_cartEmpty_text1,
       namedArgs: {'n': balance.toString()},
-    )}.\n${tr(AppStrings.cartEmpty_text2)}';
+    )}.\n${tr(AppStrings.screen_cart_cartEmpty_text2)}';
   }
 
   void _onCatalogPressed(BuildContext context) =>

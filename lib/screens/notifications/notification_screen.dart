@@ -33,7 +33,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   AppBar _buildAppBar() {
     return AppBar(
       centerTitle: true,
-      title: Text(AppStrings.appBar_notifications.tr()),
+      title: Text(AppStrings.screen_notifications_appBar.tr()),
       automaticallyImplyLeading: false,
       actions: <Widget>[
         Padding(

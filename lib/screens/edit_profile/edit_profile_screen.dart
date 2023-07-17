@@ -48,7 +48,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       appBar: AppBarWithProgress(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(tr(AppStrings.appBar_editProfile)),
+          title: Text(tr(AppStrings.screen_edit_profile_appBar)),
         ),
         listener: profileController.isLoadingProcess,
       ),

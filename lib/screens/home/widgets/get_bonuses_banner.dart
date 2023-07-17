@@ -5,7 +5,7 @@ import 'package:training_and_testing/theme/app_colors.dart';
 import 'package:training_and_testing/theme/app_typography.dart';
 
 /// {@template get_bonuses_banner}
-/// Block with buttons for quick transition to actions, 
+/// Block with buttons for quick transition to actions,
 /// for the performance of which the user can get bonuses.
 /// {@endtemplate}
 class GetBonusesBanner extends StatelessWidget {
@@ -15,13 +15,13 @@ class GetBonusesBanner extends StatelessWidget {
     this.options,
   });
 
-  // It is supposed to be a button for a quick transition 
+  // It is supposed to be a button for a quick transition
   // to the action for which the user can receive bonuses
   final Widget? options;
 
   @override
   Widget build(BuildContext context) {
-    final appTheme = Theme.of(context); 
+    final appTheme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -30,10 +30,10 @@ class GetBonusesBanner extends StatelessWidget {
           child: RichText(
             text: TextSpan(
               style: appTheme.textTheme.h2,
-              text: AppStrings.banner_main_bonus_title1.tr(),
+              text: AppStrings.screen_main_banner_bonus_title1.tr(),
               children: [
                 TextSpan(
-                  text: AppStrings.banner_main_bonus_title2.tr(),
+                  text: AppStrings.screen_main_banner_bonus_title2.tr(),
                   style: appTheme.textTheme.h2.copyWith(
                     color: appTheme.colorScheme.yellow,
                   ),

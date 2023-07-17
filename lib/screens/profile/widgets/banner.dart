@@ -21,11 +21,11 @@ class BalanceBanner extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            tr(AppStrings.banner_profile_title1),
+            tr(AppStrings.screen_profile_banner_title1),
             style: Theme.of(context).textTheme.h2,
           ),
           Text(
-            tr(AppStrings.banner_profile_title2),
+            tr(AppStrings.screen_profile_banner_title2),
             style: Theme.of(context)
                 .textTheme
                 .h2
@@ -67,7 +67,7 @@ class BalanceBanner extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                tr(AppStrings.bonusBalance),
+                tr(AppStrings.screen_profile_bonusBalance),
                 style: Theme.of(context).textTheme.h3,
               ),
             ),

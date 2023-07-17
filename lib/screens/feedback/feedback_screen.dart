@@ -4,7 +4,7 @@ import 'package:reactive_forms/reactive_forms.dart';
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
 
-enum _ControlNames{topic, comment}
+enum _ControlNames { topic, comment }
 
 class FeedbackScreen extends StatelessWidget {
   FeedbackScreen({super.key});
@@ -16,7 +16,7 @@ class FeedbackScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(tr(AppStrings.appBar_feedback)),
+        title: Text(tr(AppStrings.screen_feedback_appBar)),
       ),
       body: SingleChildScrollView(
         child: Padding(

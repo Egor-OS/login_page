@@ -1,16 +1,25 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  AppStrings {
-  static const duplicate_allAchieves = 'duplicate.allAchieves';
-  static const duplicate_catalog = 'duplicate.catalog';
-  static const duplicate_notifications = 'duplicate.notifications';
-  static const duplicate_newAddress = 'duplicate.newAddress';
-  static const duplicate_order = 'duplicate.order';
-  static const duplicate_date = 'duplicate.date';
-  static const duplicate_complain = 'duplicate.complain';
-  static const duplicate_feedback = 'duplicate.feedback';
-  static const duplicate_email = 'duplicate.email';
-  static const duplicate = 'duplicate';
+abstract class AppStrings {
+  static const badge_new = 'badge.new';
+  static const badge_qty = 'badge.qty';
+  static const badge_size = 'badge.size';
+  static const badge = 'badge';
+  static const blockTitle_achieves = 'blockTitle.achieves';
+  static const blockTitle_activeOrdrs = 'blockTitle.activeOrdrs';
+  static const blockTitle_lastOperat = 'blockTitle.lastOperat';
+  static const blockTitle_myAdresses = 'blockTitle.myAdresses';
+  static const blockTitle_notifications = 'blockTitle.notifications';
+  static const blockTitle = 'blockTitle';
+  static const bSheetTitle_category = 'bSheetTitle.category';
+  static const bSheetTitle_complain = 'bSheetTitle.complain';
+  static const bSheetTitle_date = 'bSheetTitle.date';
+  static const bSheetTitle_quantity = 'bSheetTitle.quantity';
+  static const bSheetTitle_shipAdr = 'bSheetTitle.shipAdr';
+  static const bSheetTitle_shipType = 'bSheetTitle.shipType';
+  static const bSheetTitle_size = 'bSheetTitle.size';
+  static const bSheetTitle_topic = 'bSheetTitle.topic';
+  static const bSheetTitle = 'bSheetTitle';
   static const button_addAddress = 'button.addAddress';
   static const button_addToCart = 'button.addToCart';
   static const button_allAchieves = 'button.allAchieves';
@@ -21,6 +30,7 @@ abstract class  AppStrings {
   static const button_close = 'button.close';
   static const button_complain = 'button.complain';
   static const button_confirm = 'button.confirm';
+  static const button_del = 'button.del';
   static const button_delAll = 'button.delAll';
   static const button_delFromCart = 'button.delFromCart';
   static const button_edit = 'button.edit';
@@ -39,8 +49,8 @@ abstract class  AppStrings {
   static const button_placeNewOrd = 'button.placeNewOrd';
   static const button_placeOrder = 'button.placeOrder';
   static const button_push = 'button.push';
-  static const button_repeat = 'button.repeat';
   static const button_remove = 'button.remove';
+  static const button_repeat = 'button.repeat';
   static const button_save = 'button.save';
   static const button_send = 'button.send';
   static const button_showRes = 'button.showRes';
@@ -48,94 +58,178 @@ abstract class  AppStrings {
   static const button_soon = 'button.soon';
   static const button_urComplains = 'button.urComplains';
   static const button = 'button';
-  static const appBar_allAchieves = 'appBar.allAchieves';
-  static const appBar_bonuses = 'appBar.bonuses';
-  static const appBar_catalog = 'appBar.catalog';
-  static const appBar_catalogFltr = 'appBar.catalogFltr';
-  static const appBar_confirmPhone = 'appBar.confirmPhone';
-  static const appBar_editAddress = 'appBar.editAddress';
-  static const appBar_editProfile = 'appBar.editProfile';
-  static const appBar_faq = 'appBar.faq';
-  static const appBar_feedback = 'appBar.feedback';
-  static const appBar_newAddress = 'appBar.newAddress';
-  static const appBar_notifications = 'appBar.notifications';
-  static const appBar_operations = 'appBar.operations';
-  static const appBar_order = 'appBar.order';
-  static const appBar_orders = 'appBar.orders';
-  static const appBar_shipDetails = 'appBar.shipDetails';
-  static const appBar = 'appBar';
+  static const duplicate_allAchieves = 'duplicate.allAchieves';
+  static const duplicate_banner_toSpend = 'duplicate.banner.toSpend';
+  static const duplicate_banner_selectSome = 'duplicate.banner.selectSome';
+  static const duplicate_banner_dontKnow = 'duplicate.banner.dontKnow';
+  static const duplicate_banner_howToGet = 'duplicate.banner.howToGet';
+  static const duplicate_banner = 'duplicate.banner';
+  static const duplicate_bonusBalance = 'duplicate.bonusBalance';
+  static const duplicate_catalog = 'duplicate.catalog';
+  static const duplicate_complain = 'duplicate.complain';
+  static const duplicate_date = 'duplicate.date';
+  static const duplicate_email = 'duplicate.email';
+  static const duplicate_feedback = 'duplicate.feedback';
+  static const duplicate_newAddress = 'duplicate.newAddress';
+  static const duplicate_notifications = 'duplicate.notifications';
+  static const duplicate_order = 'duplicate.order';
+  static const duplicate = 'duplicate';
+  static const enums_OrderStatus_canceled = 'enums.OrderStatus.canceled';
+  static const enums_OrderStatus_delivered = 'enums.OrderStatus.delivered';
+  static const enums_OrderStatus_waitingForDelivery =
+      'enums.OrderStatus.waitingForDelivery';
+  static const enums_OrderStatus_unknown = 'enums.OrderStatus.unknown';
+  static const enums_OrderStatus = 'enums.OrderStatus';
+  static const enums = 'enums';
   static const navBar_basket = 'navBar.basket';
   static const navBar_catalog = 'navBar.catalog';
   static const navBar_main = 'navBar.main';
   static const navBar_profile = 'navBar.profile';
   static const navBar = 'navBar';
-  static const banner_duplicate_toSpend = 'banner.duplicate.toSpend';
-  static const banner_duplicate_selectSome = 'banner.duplicate.selectSome';
-  static const banner_duplicate_dontKnow = 'banner.duplicate.dontKnow';
-  static const banner_duplicate_howToGet = 'banner.duplicate.howToGet';
-  static const banner_duplicate = 'banner.duplicate';
-  static const banner_main_text = 'banner.main.text';
-  static const banner_main_first_title1 = 'banner.main.first.title1';
-  static const banner_main_first_title2 = 'banner.main.first.title2';
-  static const banner_main_first_text = 'banner.main.first.text';
-  static const banner_main_first = 'banner.main.first';
-  static const banner_main_second_title1 = 'banner.main.second.title1';
-  static const banner_main_second_title2 = 'banner.main.second.title2';
-  static const banner_main_second_text = 'banner.main.second.text';
-  static const banner_main_second = 'banner.main.second';
-  static const banner_main_bonus_title1 = 'banner.main.bonus.title1';
-  static const banner_main_bonus_title2 = 'banner.main.bonus.title2';
-  static const banner_main_bonus_btn1 = 'banner.main.bonus.btn1';
-  static const banner_main_bonus_btn2 = 'banner.main.bonus.btn2';
-  static const banner_main_bonus = 'banner.main.bonus';
-  static const banner_main = 'banner.main';
-  static const banner_bonuses_first_title1 = 'banner.bonuses.first.title1';
-  static const banner_bonuses_first_title2 = 'banner.bonuses.first.title2';
-  static const banner_bonuses_first = 'banner.bonuses.first';
-  static const banner_bonuses_second_title1 = 'banner.bonuses.second.title1';
-  static const banner_bonuses_second_title2 = 'banner.bonuses.second.title2';
-  static const banner_bonuses_second = 'banner.bonuses.second';
-  static const banner_bonuses_bSheet_title1 = 'banner.bonuses.bSheet.title1';
-  static const banner_bonuses_bSheet_title2 = 'banner.bonuses.bSheet.title2';
-  static const banner_bonuses_bSheet = 'banner.bonuses.bSheet';
-  static const banner_bonuses = 'banner.bonuses';
-  static const banner_profile_title1 = 'banner.profile.title1';
-  static const banner_profile_title2 = 'banner.profile.title2';
-  static const banner_profile = 'banner.profile';
-  static const banner_orders_text1 = 'banner.orders.text1';
-  static const banner_orders_text2 = 'banner.orders.text2';
-  static const banner_orders = 'banner.orders';
-  static const banner_allAchieves_text = 'banner.allAchieves.text';
-  static const banner_allAchieves = 'banner.allAchieves';
-  static const banner = 'banner';
-  static const tab_operations_all = 'tab.operations.all';
-  static const tab_operations_received = 'tab.operations.received';
-  static const tab_operations_spent = 'tab.operations.spent';
-  static const tab_operations = 'tab.operations';
-  static const tab_complain_notDeliv = 'tab.complain.notDeliv';
-  static const tab_complain_wrongPrd = 'tab.complain.wrongPrd';
-  static const tab_complain_badPrint = 'tab.complain.badPrint';
-  static const tab_complain_longDeliv = 'tab.complain.longDeliv';
-  static const tab_complain_poorQlt = 'tab.complain.poorQlt';
-  static const tab_complain = 'tab.complain';
-  static const tab_notifications_allMessages = 'tab.notifications.allMessages';
-  static const tab_notifications = 'tab.notifications';
-  static const tab = 'tab';
-  static const blockTitle_achieves = 'blockTitle.achieves';
-  static const blockTitle_activeOrdrs = 'blockTitle.activeOrdrs';
-  static const blockTitle_lastOperat = 'blockTitle.lastOperat';
-  static const blockTitle_myAdresses = 'blockTitle.myAdresses';
-  static const blockTitle_notifications = 'blockTitle.notifications';
-  static const blockTitle = 'blockTitle';
-  static const snackBarMes_authSucces = 'snackBarMes.authSucces';
-  static const snackBarMes_authFiled = 'snackBarMes.authFiled';
+  static const screen_achieves_appBar = 'screen.achieves.appBar';
+  static const screen_achieves_banner_text = 'screen.achieves.banner.text';
+  static const screen_achieves_banner = 'screen.achieves.banner';
+  static const screen_achieves = 'screen.achieves';
+  static const screen_address_appBar_new = 'screen.address.appBar.new';
+  static const screen_address_appBar_edit = 'screen.address.appBar.edit';
+  static const screen_address_appBar = 'screen.address.appBar';
+  static const screen_address_confirmDelMes = 'screen.address.confirmDelMes';
+  static const screen_address = 'screen.address';
+  static const screen_bonuses_appBar = 'screen.bonuses.appBar';
+  static const screen_bonuses_categories_speaker =
+      'screen.bonuses.categories.speaker';
+  static const screen_bonuses_categories_writer =
+      'screen.bonuses.categories.writer';
+  static const screen_bonuses_categories = 'screen.bonuses.categories';
+  static const screen_bonuses_title = 'screen.bonuses.title';
+  static const screen_bonuses_banner_first_title1 =
+      'screen.bonuses.banner.first.title1';
+  static const screen_bonuses_banner_first_title2 =
+      'screen.bonuses.banner.first.title2';
+  static const screen_bonuses_banner_first = 'screen.bonuses.banner.first';
+  static const screen_bonuses_banner_second_title1 =
+      'screen.bonuses.banner.second.title1';
+  static const screen_bonuses_banner_second_title2 =
+      'screen.bonuses.banner.second.title2';
+  static const screen_bonuses_banner_second = 'screen.bonuses.banner.second';
+  static const screen_bonuses_banner_bSheet_title1 =
+      'screen.bonuses.banner.bSheet.title1';
+  static const screen_bonuses_banner_bSheet_title2 =
+      'screen.bonuses.banner.bSheet.title2';
+  static const screen_bonuses_banner_bSheet = 'screen.bonuses.banner.bSheet';
+  static const screen_bonuses_banner = 'screen.bonuses.banner';
+  static const screen_bonuses = 'screen.bonuses';
+  static const screen_cart_somethingWentWr = 'screen.cart.somethingWentWr';
+  static const screen_cart_cartEmpty_title1 = 'screen.cart.cartEmpty.title1';
+  static const screen_cart_cartEmpty_title2 = 'screen.cart.cartEmpty.title2';
+  static const screen_cart_cartEmpty_text1 = 'screen.cart.cartEmpty.text1';
+  static const screen_cart_cartEmpty_text2 = 'screen.cart.cartEmpty.text2';
+  static const screen_cart_cartEmpty = 'screen.cart.cartEmpty';
+  static const screen_cart = 'screen.cart';
+  static const screen_catalog_urBalance = 'screen.catalog.urBalance';
+  static const screen_catalog = 'screen.catalog';
+  static const screen_catalog_filter_appBar = 'screen.catalog_filter.appBar';
+  static const screen_catalog_filter = 'screen.catalog_filter';
+  static const screen_checkout_appBar = 'screen.checkout.appBar';
+  static const screen_checkout = 'screen.checkout';
+  static const screen_edit_profile_appBar = 'screen.edit_profile.appBar';
+  static const screen_edit_profile_addedAdrMes_title1 =
+      'screen.edit_profile.addedAdrMes.title1';
+  static const screen_edit_profile_addedAdrMes_title2 =
+      'screen.edit_profile.addedAdrMes.title2';
+  static const screen_edit_profile_addedAdrMes_text =
+      'screen.edit_profile.addedAdrMes.text';
+  static const screen_edit_profile_addedAdrMes =
+      'screen.edit_profile.addedAdrMes';
+  static const screen_edit_profile = 'screen.edit_profile';
+  static const screen_faq_appBar = 'screen.faq.appBar';
+  static const screen_faq = 'screen.faq';
+  static const screen_feedback_appBar = 'screen.feedback.appBar';
+  static const screen_feedback = 'screen.feedback';
+  static const screen_login_welcomMes = 'screen.login.welcomMes';
+  static const screen_login = 'screen.login';
+  static const screen_main_banner_text = 'screen.main.banner.text';
+  static const screen_main_banner_first_title1 =
+      'screen.main.banner.first.title1';
+  static const screen_main_banner_first_title2 =
+      'screen.main.banner.first.title2';
+  static const screen_main_banner_first_text = 'screen.main.banner.first.text';
+  static const screen_main_banner_first = 'screen.main.banner.first';
+  static const screen_main_banner_second_title1 =
+      'screen.main.banner.second.title1';
+  static const screen_main_banner_second_title2 =
+      'screen.main.banner.second.title2';
+  static const screen_main_banner_second_text =
+      'screen.main.banner.second.text';
+  static const screen_main_banner_second = 'screen.main.banner.second';
+  static const screen_main_banner_bonus_title1 =
+      'screen.main.banner.bonus.title1';
+  static const screen_main_banner_bonus_title2 =
+      'screen.main.banner.bonus.title2';
+  static const screen_main_banner_bonus_btn1 = 'screen.main.banner.bonus.btn1';
+  static const screen_main_banner_bonus_btn2 = 'screen.main.banner.bonus.btn2';
+  static const screen_main_banner_bonus = 'screen.main.banner.bonus';
+  static const screen_main_banner = 'screen.main.banner';
+  static const screen_main_today = 'screen.main.today';
+  static const screen_main_bonusBalance = 'screen.main.bonusBalance';
+  static const screen_main = 'screen.main';
+  static const screen_notifications_appBar = 'screen.notifications.appBar';
+  static const screen_notifications_tab_allMessages =
+      'screen.notifications.tab.allMessages';
+  static const screen_notifications_tab = 'screen.notifications.tab';
+  static const screen_notifications_noNotifMes_title1 =
+      'screen.notifications.noNotifMes.title1';
+  static const screen_notifications_noNotifMes_title2 =
+      'screen.notifications.noNotifMes.title2';
+  static const screen_notifications_noNotifMes =
+      'screen.notifications.noNotifMes';
+  static const screen_notifications = 'screen.notifications';
+  static const screen_operations_appBar = 'screen.operations.appBar';
+  static const screen_operations_tab_all = 'screen.operations.tab.all';
+  static const screen_operations_tab_received =
+      'screen.operations.tab.received';
+  static const screen_operations_tab_spent = 'screen.operations.tab.spent';
+  static const screen_operations_tab = 'screen.operations.tab';
+  static const screen_operations = 'screen.operations';
+  static const screen_order_appBar = 'screen.order.appBar';
+  static const screen_order_tab_notDeliv = 'screen.order.tab.notDeliv';
+  static const screen_order_tab_wrongPrd = 'screen.order.tab.wrongPrd';
+  static const screen_order_tab_badPrint = 'screen.order.tab.badPrint';
+  static const screen_order_tab_longDeliv = 'screen.order.tab.longDeliv';
+  static const screen_order_tab_poorQlt = 'screen.order.tab.poorQlt';
+  static const screen_order_tab = 'screen.order.tab';
+  static const screen_order = 'screen.order';
+  static const screen_orders_appBar = 'screen.orders.appBar';
+  static const screen_orders_banner_text1 = 'screen.orders.banner.text1';
+  static const screen_orders_banner_text2 = 'screen.orders.banner.text2';
+  static const screen_orders_banner = 'screen.orders.banner';
+  static const screen_orders = 'screen.orders';
+  static const screen_phone_confirm_appBar = 'screen.phone_confirm.appBar';
+  static const screen_phone_confirm_title = 'screen.phone_confirm.title';
+  static const screen_phone_confirm = 'screen.phone_confirm';
+  static const screen_profile_banner_title1 = 'screen.profile.banner.title1';
+  static const screen_profile_banner_title2 = 'screen.profile.banner.title2';
+  static const screen_profile_banner = 'screen.profile.banner';
+  static const screen_profile_bonusBalance = 'screen.profile.bonusBalance';
+  static const screen_profile = 'screen.profile';
+  static const screen = 'screen';
+  static const snackBarMes_address_notRemove = 'snackBarMes.address.notRemove';
+  static const snackBarMes_address_notChenge = 'snackBarMes.address.notChenge';
+  static const snackBarMes_address_notAdd = 'snackBarMes.address.notAdd';
+  static const snackBarMes_address_tryAgain = 'snackBarMes.address.tryAgain';
+  static const snackBarMes_address = 'snackBarMes.address';
+  static const snackBarMes_edit_profile_succDel =
+      'snackBarMes.edit_profile.succDel';
+  static const snackBarMes_edit_profile_succCh =
+      'snackBarMes.edit_profile.succCh';
+  static const snackBarMes_edit_profile = 'snackBarMes.edit_profile';
+  static const snackBarMes_login_authFiled = 'snackBarMes.login.authFiled';
+  static const snackBarMes_login_authSucces = 'snackBarMes.login.authSucces';
+  static const snackBarMes_login = 'snackBarMes.login';
   static const snackBarMes_notCompleted = 'snackBarMes.notCompleted';
   static const snackBarMes = 'snackBarMes';
-  static const badge_new = 'badge.new';
-  static const badge_qty = 'badge.qty';
-  static const badge_size = 'badge.size';
-  static const badge = 'badge';
   static const textField_address = 'textField.address';
+  static const textField_category = 'textField.category';
   static const textField_city = 'textField.city';
   static const textField_count = 'textField.count';
   static const textField_country = 'textField.country';
@@ -155,40 +249,7 @@ abstract class  AppStrings {
   static const textField_surname = 'textField.surname';
   static const textField_urComment = 'textField.urComment';
   static const textField = 'textField';
-  static const bSheetTitle_category = 'bSheetTitle.category';
-  static const bSheetTitle_complain = 'bSheetTitle.complain';
-  static const bSheetTitle_date = 'bSheetTitle.date';
-  static const bSheetTitle_quantity = 'bSheetTitle.quantity';
-  static const bSheetTitle_shipAdr = 'bSheetTitle.shipAdr';
-  static const bSheetTitle_shipType = 'bSheetTitle.shipType';
-  static const bSheetTitle_size = 'bSheetTitle.size';
-  static const bSheetTitle_topic = 'bSheetTitle.topic';
-  static const bSheetTitle = 'bSheetTitle';
-  static const enums_OrderStatus_canceled = 'enums.OrderStatus.canceled';
-  static const enums_OrderStatus_delivered = 'enums.OrderStatus.delivered';
-  static const enums_OrderStatus_waitingForDelivery = 'enums.OrderStatus.waitingForDelivery';
-  static const enums_OrderStatus_unknown = 'enums.OrderStatus.unknown';
-  static const enums_OrderStatus = 'enums.OrderStatus';
-  static const enums = 'enums';
-  static const validator_usedName = 'validator.usedName';
   static const validator_invalidPhone = 'validator.invalidPhone';
+  static const validator_usedName = 'validator.usedName';
   static const validator = 'validator';
-  static const noNotifMes_title1 = 'noNotifMes.title1';
-  static const noNotifMes_title2 = 'noNotifMes.title2';
-  static const noNotifMes = 'noNotifMes';
-  static const addedAdrMes_title1 = 'addedAdrMes.title1';
-  static const addedAdrMes_title2 = 'addedAdrMes.title2';
-  static const addedAdrMes_text = 'addedAdrMes.text';
-  static const addedAdrMes = 'addedAdrMes';
-  static const cartEmpty_title1 = 'cartEmpty.title1';
-  static const cartEmpty_title2 = 'cartEmpty.title2';
-  static const cartEmpty_text1 = 'cartEmpty.text1';
-  static const cartEmpty_text2 = 'cartEmpty.text2';
-  static const cartEmpty = 'cartEmpty';
-  static const welcomMes = 'welcomMes';
-  static const today = 'today';
-  static const bonusBalance = 'bonusBalance';
-  static const urBalance = 'urBalance';
-  static const somethingWentWr = 'somethingWentWr';
-
 }

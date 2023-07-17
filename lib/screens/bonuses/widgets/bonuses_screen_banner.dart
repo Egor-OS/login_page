@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:training_and_testing/constants/constants.dart';
-import 'package:training_and_testing/screens/home_screen/widgets/widgets.dart';
+import 'package:training_and_testing/screens/home/widgets/widgets.dart';
 import 'package:training_and_testing/theme/theme.dart';
 import 'package:training_and_testing/utils/extensions/extensions.dart';
 import 'package:training_and_testing/widgets/widgets.dart';
@@ -45,11 +45,11 @@ BannerCard _firstCard(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  tr(AppStrings.banner_bonuses_first_title1),
+                  tr(AppStrings.screen_bonuses_banner_first_title1),
                   style: appTheme.textTheme.h3,
                 ),
                 Text(
-                  tr(AppStrings.banner_bonuses_first_title2),
+                  tr(AppStrings.screen_bonuses_banner_first_title2),
                   style: appTheme.textTheme.h3
                       .copyWith(color: appTheme.colorScheme.blue30),
                 ),
@@ -100,11 +100,11 @@ BannerCard _secondCard(BuildContext context) {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  tr(AppStrings.banner_bonuses_second_title1),
+                  tr(AppStrings.screen_bonuses_banner_second_title1),
                   style: appTheme.textTheme.h3,
                 ),
                 Text(
-                  tr(AppStrings.banner_bonuses_second_title2),
+                  tr(AppStrings.screen_bonuses_banner_second_title2),
                   style: appTheme.textTheme.h3
                       .copyWith(color: appTheme.colorScheme.yellow),
                 ),

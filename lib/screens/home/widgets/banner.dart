@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:training_and_testing/constants/constants.dart';
 import 'package:training_and_testing/controllers/controllers.dart';
-import 'package:training_and_testing/screens/home_screen/widgets/widgets.dart';
+import 'package:training_and_testing/screens/home/widgets/widgets.dart';
 import 'package:training_and_testing/theme/app_colors.dart';
 import 'package:training_and_testing/theme/app_typography.dart';
 import 'package:training_and_testing/widgets/future_widget.dart';
@@ -64,17 +64,17 @@ class _MainBannerState extends State<MainBanner> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.banner_main_first_title1.tr().toUpperCase(),
+              AppStrings.screen_main_banner_first_title1.tr().toUpperCase(),
               style: appTheme.textTheme.hero,
             ),
             Text(
-              AppStrings.banner_main_first_title2.tr().toUpperCase(),
+              AppStrings.screen_main_banner_first_title2.tr().toUpperCase(),
               style: appTheme.textTheme.hero
                   .copyWith(color: appTheme.colorScheme.blue30),
             ),
             const SizedBox(height: spacing4),
             Text(
-              AppStrings.banner_main_first_text.tr(),
+              AppStrings.screen_main_banner_first_text.tr(),
               style: appTheme.textTheme.bodyM,
             ),
             const Expanded(child: SizedBox()),
@@ -105,17 +105,17 @@ class _MainBannerState extends State<MainBanner> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppStrings.banner_main_second_title1.tr().toUpperCase(),
+              AppStrings.screen_main_banner_second_title1.tr().toUpperCase(),
               style: appTheme.textTheme.hero,
             ),
             Text(
-              AppStrings.banner_main_second_title2.tr().toUpperCase(),
+              AppStrings.screen_main_banner_second_title2.tr().toUpperCase(),
               style: appTheme.textTheme.hero
                   .copyWith(color: appTheme.colorScheme.yellow),
             ),
             const SizedBox(height: spacing4),
             Text(
-              AppStrings.banner_main_second_text.tr(),
+              AppStrings.screen_main_banner_second_text.tr(),
               style: appTheme.textTheme.bodyM,
             ),
             const Expanded(child: SizedBox()),

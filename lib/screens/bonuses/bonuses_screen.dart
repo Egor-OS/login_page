@@ -30,7 +30,7 @@ class _BonusesScreenState extends State<BonusesScreen> {
       appBar: AppBarWithProgress(
         appBar: AppBar(
           centerTitle: true,
-          title: Text(tr(AppStrings.appBar_bonuses)),
+          title: Text(tr(AppStrings.screen_bonuses_appBar)),
         ),
         listener: controller.isSendingProcess,
       ),
@@ -55,8 +55,7 @@ class _BonusesScreenState extends State<BonusesScreen> {
   Widget _buildHeader() {
     return Center(
       child: Text(
-        // TODO: locale
-        'Request bonuses',
+        tr(AppStrings.screen_bonuses_title),
         style: Theme.of(context).textTheme.h2,
       ),
     );
