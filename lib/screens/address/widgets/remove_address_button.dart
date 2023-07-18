@@ -36,6 +36,7 @@ class RemoveAddressButton extends StatelessWidget {
         Text(
           tr(AppStrings.screen_address_confirmDelMes),
           textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.h2,
         ),
         const SizedBox(height: spacing24),
         const SizedBox(height: spacing16),

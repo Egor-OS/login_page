@@ -36,7 +36,7 @@ class _RequestBonusesFormWidgetState extends State<RequestBonusesFormWidget> {
 
   /// Hint for the category selection field
   ///
-  // TODO: locale
+  // TODO:
   final hintCategory = tr(AppStrings.textField_category);
 
   @override
@@ -80,6 +80,7 @@ class _RequestBonusesFormWidgetState extends State<RequestBonusesFormWidget> {
           return Column(
             children: [
               mapCategories[control.value] ?? const SizedBox(),
+              // TODO:
               if (control.checkNonEmpty()) _buildSendButton(),
             ],
           );
@@ -141,13 +142,14 @@ enum _WriterControls {
 
   const _WriterControls(this.lable);
 
+  // TODO:
   final String lable;
 }
 
 Widget _writerFields(FormGroup form) {
-  for (final el in _SpeakerControls.values) {
-    if (form.controls.containsKey(el.name)) form.removeControl(el.name);
-  }
+  // for (final el in _SpeakerControls.values) {
+  //   if (form.controls.containsKey(el.name)) form.removeControl(el.name);
+  // }
   return Column(
     children: [
       BasicFormField(
@@ -195,9 +197,9 @@ enum _SpeakerControls {
 }
 
 Widget _speakerFields(FormGroup form) {
-  for (final el in _SpeakerControls.values) {
-    if (form.controls.containsKey(el.name)) form.removeControl(el.name);
-  }
+  // for (final el in _SpeakerControls.values) {
+  //   if (form.controls.containsKey(el.name)) form.removeControl(el.name);
+  // }
 
   return Column(
     children: [
